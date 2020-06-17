@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMailBulk,
-  IconDefinition,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faGithub,
