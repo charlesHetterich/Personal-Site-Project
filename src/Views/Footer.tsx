@@ -30,7 +30,7 @@ export const Footer: React.FunctionComponent = () => {
         />
       </LinksContainer>
       <Label variant="body1" color="textPrimary">
-        if there’s anything you’d like to talk about- get in touch!
+        If there’s anything you’d like to talk about- get in touch!
       </Label>
     </Wrapper>
   );
@@ -91,7 +91,8 @@ const Label = withStyles((theme) => ({
   root: {
     flex: 1,
     fontSize: "0.75em",
-    fontFamily: "Roboto Slab",
+    fontFamily: "'Roboto Slab', serif",
+    fontWeight: 400,
     [theme.breakpoints.down("md")]: {
       marginBottom: 30,
     },
