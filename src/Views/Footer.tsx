@@ -8,37 +8,9 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { Link } from "../Util/Components";
+import { IconButton, withStyles } from "@material-ui/core";
+
 export const Footer: React.FunctionComponent = () => {
-  const Wrapper = styled.div`
-    display: flex;
-    padding: 50px;
-    padding-left: 8vw;
-    padding-right: 8vw;
-    @media (min-width: 801px) {
-      align-items: center;
-    }
-    @media (max-width: 800px) {
-      flex-direction: column-reverse;
-    }
-  `;
-
-  const LinksContainer = styled.div`
-    flex: 1;
-    display: flex;
-    justify-content: left;
-  `;
-
-  const Label = styled.p`
-    flex: 1;
-    font-size: 0.75em;
-    font-family: "Roboto Slab", serif;
-    color: #424245;
-    @media (max-width: 800px) {
-      margin-bottom: 30px;
-    }
-  `;
-
   return (
     <Wrapper>
       <LinksContainer>
@@ -65,18 +37,44 @@ const LinkButton: React.FunctionComponent<{
   icon: IconDefinition;
   link: string;
 }> = ({ icon, link }) => {
-  const StyledLink = styled(Link)`
-    color: #535357;
-    padding: 5px;
-    margin-right: 10%;
-    &:hover {
-      color: black;
-    }
-  `;
-
   return (
-    <StyledLink href={link}>
-      <FontAwesomeIcon icon={icon} size={"lg"}></FontAwesomeIcon>
-    </StyledLink>
+    <Link color="primary">
+      <FontAwesomeIcon href={link} icon={icon} />
+    </Link>
   );
 };
+const Link = withStyles((theme) => ({
+  root: {
+    marginRight: "5%",
+    transition: "color 0.25s" /* For modern browsers */,
+  },
+}))(IconButton);
+
+const Wrapper = styled.div`
+  display: flex;
+  padding: 50px;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  @media (min-width: 801px) {
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
+`;
+
+const LinksContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: left;
+`;
+
+const Label = styled.p`
+  flex: 1;
+  font-size: 0.75em;
+  font-family: "Roboto Slab", serif;
+  color: #424245;
+  @media (max-width: 800px) {
+    margin-bottom: 30px;
+  }
+`;

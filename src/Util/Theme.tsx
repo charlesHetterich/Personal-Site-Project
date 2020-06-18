@@ -1,14 +1,29 @@
-// theme.js
-export const lightTheme = {
-  body: "#E2E2E2",
-  text: "#363537",
-  toggleBorder: "#FFF",
-  gradient: "linear-gradient(#39598A, #79D7ED)",
+import { ThemeOptions, createMuiTheme } from "@material-ui/core";
+
+const lightTheme: ThemeOptions = {
+  palette: {
+    type: "light",
+    primary: {
+      main: "#00ff00",
+    },
+  },
 };
 
-export const darkTheme = {
-  body: "#363537",
-  text: "#FAFAFA",
-  toggleBorder: "#6B8096",
-  gradient: "linear-gradient(#091236, #1E215D)",
+const darkTheme: ThemeOptions = {
+  palette: {
+    type: "dark",
+    primary: {
+      main: "#0000ff",
+    },
+  },
+};
+
+export type ThemeMode = "light" | "dark";
+export const GetTheme = (theme: ThemeMode) => {
+  switch (theme) {
+    case "light":
+      return createMuiTheme(lightTheme);
+    case "dark":
+      return createMuiTheme(darkTheme);
+  }
 };
