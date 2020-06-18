@@ -1,27 +1,35 @@
 import React from "react";
-import styled from "styled-components";
+import { ThemeProvider, withStyles, Box } from "@material-ui/core";
 
 import { Footer } from "./Footer";
-import { ThemeButton } from "../Util/Components";
 
+import { ThemeButton, Text } from "../Util/Components";
 import { useSelect } from "../Util/Redux";
-
-import { ThemeProvider } from "@material-ui/core";
 import { GetTheme } from "../Util/Theme";
 
 export default function App() {
   const systemState = useSelect((s) => s.system);
   const theme = GetTheme(systemState.theme);
-
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <Container
+        style={{
+          backgroundColor: theme.palette.background.default,
+          transition: "background-color 0.25s",
+        }}
+      >
         <LeftContainer>
           <TitleContainer>
-            <Title>Charles</Title>
-            <SubTitle>'s website</SubTitle>
+            <Title variant="h1" color="primary">
+              Charles
+            </Title>
+            <SubTitle variant="body1" color="textSecondary">
+              's website
+            </SubTitle>
           </TitleContainer>
-          <DescText>this is my ittie-bittie website</DescText>
+          <DescText variant="body1" color="textSecondary">
+            this is my ittie-bittie website
+          </DescText>
         </LeftContainer>
         <RightContainer>
           <InteractablesContainer>
@@ -36,99 +44,116 @@ export default function App() {
   );
 }
 
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
-`;
+const Container = withStyles((theme) => ({
+  root: {
+    display: "flex",
+    width: "100%",
+    minHeight: "100vh",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
+  },
+}))(Box);
 
-const LeftContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @media (max-width: 800px) {
-    flex: 0;
-    padding-bottom: 0;
-    align-items: flex-start;
-    justify-content: start;
-  }
-`;
+const LeftContainer = withStyles((theme) => ({
+  root: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      flex: 0,
+      paddingBottom: 0,
+      alignItems: "flex-start",
+      justifyContent: "start",
+    },
+  },
+}))(Box);
 
-const RightContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @media (min-width: 801px) {
-    padding-left: 0;
-  }
-  @media (max-width: 800px) {
-    padding: 50px;
-    padding-left: 8vw;
-    padding-top: 0px;
-    justify-content: start;
-  }
-`;
+const RightContainer = withStyles((theme) => ({
+  root: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    [theme.breakpoints.up("md")]: {
+      paddingLeft: 0,
+    },
+    [theme.breakpoints.down("md")]: {
+      padding: 50,
+      paddingLeft: "8vw",
+      paddingTop: 0,
+      justifyContent: "start",
+    },
+  },
+}))(Box);
 
-const TitleContainer = styled.div`
-  padding-top: 50px;
-  padding-left: 8vw;
-  padding-right: 8vw;
-  flex-direction: column;
-  display: flex;
-`;
+const TitleContainer = withStyles((theme) => ({
+  root: {
+    paddingTop: 50,
+    paddingLeft: "8vw",
+    paddingRight: "8vw",
+    flexDirection: "column",
+    display: "flex",
+  },
+}))(Box);
 
-const Title = styled.h1`
-  margin-left: -5px;
-  font-weight: 900;
-  font-size: 4em;
-  @media (max-width: 450px) {
-    font-size: 3em;
-  }
-`;
+const Title = withStyles((theme) => ({
+  root: {
+    marginLeft: -5,
+    fontWeight: 900,
+    fontSize: "4em",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "3em",
+    },
+  },
+}))(Text);
 
-const SubTitle = styled.p`
-  color: #535357;
-  margin-top: -15px;
-  font-size: 1.5em;
-  font-weight: 700;
-  font-style: italic;
-  margin-bottom: 100px;
-  @media (max-width: 450px) {
-    font-size: 1em;
-  }
-`;
+const SubTitle = withStyles((theme) => ({
+  root: {
+    marginTop: -15,
+    fontSize: "1.5em",
+    fontWeight: 700,
+    fontStyle: "italic",
+    marginBottom: 100,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1em",
+    },
+  },
+}))(Text);
 
-const DescText = styled.p`
-  padding-left: 8vw;
-  padding-right: 8vw;
-  color: #535357;
-  font-size: 1.5em;
-  font-weight: 500;
-  font-style: italic;
-  height: 100px;
-  @media (max-width: 450px) {
-    font-size: 1em;
-  }
-`;
+const DescText = withStyles((theme) => ({
+  root: {
+    paddingLeft: "8vw",
+    paddingRight: "8vw",
+    fontSize: "1.5em",
+    fontWeight: 500,
+    fontStyle: "italic",
+    height: 100,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1em",
+    },
+  },
+}))(Text);
 
-const InteractablesContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  @media (min-width: 801px) {
-    margin-right: 50px;
-  }
-`;
+const InteractablesContainer = withStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+    [theme.breakpoints.up("md")]: {
+      marginRight: 50,
+    },
+  },
+}))(Text);
 
-const FooterContainer = styled.div`
-  width: 100%;
-  @media (min-width: 801px) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-  }
-`;
+const FooterContainer = withStyles((theme) => ({
+  root: {
+    alignItems: "flex-start",
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      position: "fixed",
+      bottom: 0,
+      left: 0,
+    },
+  },
+}))(Box);

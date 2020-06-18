@@ -1,11 +1,11 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import { Button, withStyles } from "@material-ui/core";
 import { CycleTheme } from "../../Redux";
 
 export const ThemeButton: React.FunctionComponent = () => {
-  console.log("start");
   return (
-    <Button
+    <StyledButton
+      autoCapitalize="none"
       variant="contained"
       color="primary"
       onClick={() => {
@@ -13,6 +13,22 @@ export const ThemeButton: React.FunctionComponent = () => {
       }}
     >
       Hello World
-    </Button>
+    </StyledButton>
   );
 };
+
+export const StyledButton = withStyles((theme) => ({
+  root: {
+    borderRadius: 15,
+    padding: 10,
+    paddingRight: 30,
+    paddingLeft: 30,
+    fontFamily: "roboto slab",
+    fontWeight: 500,
+    fontSize: "1.2em",
+  },
+  label: {
+    textTransform: "capitalize",
+    color: theme.palette.primary.contrastText,
+  },
+}))(Button);

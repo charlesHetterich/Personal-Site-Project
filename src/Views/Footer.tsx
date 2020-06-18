@@ -1,14 +1,15 @@
 import React from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { IconButton, withStyles, Box } from "@material-ui/core";
+
 import {
   faTwitter,
   faGithub,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { IconDefinition, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { IconButton, withStyles } from "@material-ui/core";
+import { Text } from "../Util/Components";
 
 export const Footer: React.FunctionComponent = () => {
   return (
@@ -28,53 +29,71 @@ export const Footer: React.FunctionComponent = () => {
           link="mailto:hetterich.charles@gmail.com"
         />
       </LinksContainer>
-      <Label>if there’s anything you’d like to talk about- get in touch!</Label>
+      <Label variant="body1" color="textPrimary">
+        if there’s anything you’d like to talk about- get in touch!
+      </Label>
     </Wrapper>
   );
 };
 
+/* Let's us open the link in a new tab */
+const navigateToExternalUrl = (url: string, shouldOpenNewTab: boolean = true) =>
+  shouldOpenNewTab ? window.open(url, "_blank") : (window.location.href = url);
 const LinkButton: React.FunctionComponent<{
   icon: IconDefinition;
   link: string;
 }> = ({ icon, link }) => {
   return (
-    <Link color="primary">
-      <FontAwesomeIcon href={link} icon={icon} />
+    <Link
+      edge="start"
+      onClick={() => {
+        navigateToExternalUrl(link);
+      }}
+    >
+      <FontAwesomeIcon icon={icon} />
     </Link>
   );
 };
+
 const Link = withStyles((theme) => ({
   root: {
-    marginRight: "5%",
+    color: theme.palette.text.secondary,
+    marginRight: "5vw",
     transition: "color 0.25s" /* For modern browsers */,
   },
 }))(IconButton);
 
-const Wrapper = styled.div`
-  display: flex;
-  padding: 50px;
-  padding-left: 8vw;
-  padding-right: 8vw;
-  @media (min-width: 801px) {
-    align-items: center;
-  }
-  @media (max-width: 800px) {
-    flex-direction: column-reverse;
-  }
-`;
+const Wrapper = withStyles((theme) => ({
+  root: {
+    display: "flex",
+    padding: 50,
+    paddingLeft: "8vw",
+    paddingRight: "8vw",
+    [theme.breakpoints.up("md")]: {
+      alignItems: "center",
+    },
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column-reverse",
+      alignItems: "flex-start",
+    },
+  },
+}))(Box);
 
-const LinksContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: left;
-`;
+const LinksContainer = withStyles((theme) => ({
+  root: {
+    flex: 1,
+    display: "flex",
+    justifyContent: "left",
+  },
+}))(Box);
 
-const Label = styled.p`
-  flex: 1;
-  font-size: 0.75em;
-  font-family: "Roboto Slab", serif;
-  color: #424245;
-  @media (max-width: 800px) {
-    margin-bottom: 30px;
-  }
-`;
+const Label = withStyles((theme) => ({
+  root: {
+    flex: 1,
+    fontSize: "0.75em",
+    fontFamily: "Roboto Slab",
+    [theme.breakpoints.down("md")]: {
+      marginBottom: 30,
+    },
+  },
+}))(Text);
