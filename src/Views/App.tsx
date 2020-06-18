@@ -48,7 +48,7 @@ const Container = withStyles((theme) => ({
   root: {
     display: "flex",
     width: "100%",
-    minHeight: "100vh",
+    minHeight: "-webkit-fill-available",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
     },
@@ -103,9 +103,6 @@ const Title = withStyles((theme) => ({
     marginLeft: -5,
     fontWeight: 900,
     fontSize: "4em",
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "3em",
-    },
   },
 }))(Text);
 
@@ -116,9 +113,6 @@ const SubTitle = withStyles((theme) => ({
     fontWeight: 700,
     fontStyle: "italic",
     marginBottom: 100,
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1em",
-    },
   },
 }))(Text);
 
@@ -130,9 +124,6 @@ const DescText = withStyles((theme) => ({
     fontWeight: 500,
     fontStyle: "italic",
     height: 100,
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "1em",
-    },
   },
 }))(Text);
 

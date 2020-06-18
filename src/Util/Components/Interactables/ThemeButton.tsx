@@ -23,8 +23,8 @@ export const StyledButton = withStyles((theme) => ({
     padding: 10,
     paddingRight: 30,
     paddingLeft: 30,
-    fontFamily: "roboto slab",
-    fontWeight: 500,
+    fontFamily: "'Roboto Slab', serif",
+    fontWeight: 400,
     fontSize: "1.2em",
   },
   label: {
