@@ -69,10 +69,10 @@ const Wrapper = withStyles((theme) => ({
     padding: 50,
     paddingLeft: "8vw",
     paddingRight: "8vw",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       alignItems: "center",
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       flexDirection: "column-reverse",
       alignItems: "flex-start",
     },
@@ -93,7 +93,7 @@ const Label = withStyles((theme) => ({
     fontSize: "0.75em",
     fontFamily: "'Roboto Slab', serif",
     fontWeight: 400,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       marginBottom: 30,
     },
   },

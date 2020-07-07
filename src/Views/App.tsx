@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, withStyles, Box } from "@material-ui/core";
+import { ThemeProvider, withStyles, Box, CssBaseline } from "@material-ui/core";
 
 import { Footer } from "./Footer";
 
@@ -12,6 +12,8 @@ export default function App() {
   const theme = GetTheme(systemState.theme);
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
+
       <Container
         style={{
           backgroundColor: theme.palette.background.default,
@@ -23,7 +25,7 @@ export default function App() {
             <Title variant="h1" color="primary">
               Charles
             </Title>
-            <SubTitle variant="body1" color="textSecondary">
+            <SubTitle variant="h2" color="secondary">
               's website
             </SubTitle>
           </TitleContainer>
@@ -48,8 +50,8 @@ const Container = withStyles((theme) => ({
   root: {
     display: "flex",
     width: "100%",
-    minHeight: "-webkit-fill-available",
-    [theme.breakpoints.down("md")]: {
+    minHeight: "100vh",
+    [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
     },
   },
@@ -61,7 +63,7 @@ const LeftContainer = withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       flex: 0,
       paddingBottom: 0,
       alignItems: "flex-start",
@@ -76,10 +78,10 @@ const RightContainer = withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       paddingLeft: 0,
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       padding: 50,
       paddingLeft: "8vw",
       paddingTop: 0,
@@ -90,7 +92,6 @@ const RightContainer = withStyles((theme) => ({
 
 const TitleContainer = withStyles((theme) => ({
   root: {
-    paddingTop: 50,
     paddingLeft: "8vw",
     paddingRight: "8vw",
     flexDirection: "column",
@@ -101,18 +102,50 @@ const TitleContainer = withStyles((theme) => ({
 const Title = withStyles((theme) => ({
   root: {
     marginLeft: -5,
-    fontWeight: 900,
-    fontSize: "4em",
+    fontWeight: 600,
+    fontSize: "6em",
+
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 50,
+      fontSize: "8em",
+    },
+    [theme.breakpoints.down(500)]: {
+      fontSize: "6em",
+      marginTop: 30,
+    },
+    [theme.breakpoints.down(400)]: {
+      marginTop: 10,
+    },
+    [theme.breakpoints.down(375)]: {
+      marginTop: 5,
+      fontSize: "5em",
+    },
+    /*
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "5em",
+    },*/
   },
 }))(Text);
 
 const SubTitle = withStyles((theme) => ({
   root: {
-    marginTop: -15,
-    fontSize: "1.5em",
-    fontWeight: 700,
-    fontStyle: "italic",
+    marginTop: -20,
+    fontSize: "2em",
+    fontWeight: 500,
     marginBottom: 100,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "3em",
+      marginBottom: 100,
+      marginTop: -30,
+    },
+    [theme.breakpoints.down(500)]: {
+      fontSize: "2em",
+      marginTop: -20,
+    },
+    [theme.breakpoints.down(375)]: {
+      fontSize: "1.5em",
+      marginTop: -15,
+    },
   },
 }))(Text);
 
@@ -124,6 +157,7 @@ const DescText = withStyles((theme) => ({
     fontWeight: 500,
     fontStyle: "italic",
     height: 100,
+    color: theme.palette.secondary.light,
   },
 }))(Text);
 
@@ -131,7 +165,7 @@ const InteractablesContainer = withStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       marginRight: 50,
     },
   },

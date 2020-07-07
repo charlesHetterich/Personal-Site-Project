@@ -17,11 +17,15 @@ const lightTheme: ThemeOptions = {
   palette: {
     type: "light",
     background: {
-      default: "#f5f5ff",
+      default: "#ffffff",
     },
     primary: {
-      main: "#242426",
-      contrastText: "#f5f5ff",
+      main: "#343436",
+      contrastText: "#ffffff",
+    },
+    secondary: {
+      main: "#343436",
+      light: "#818184",
     },
     text: {
       primary: "#424245",
@@ -40,6 +44,10 @@ const darkTheme: ThemeOptions = {
     primary: {
       main: "#f5f5ff",
       contrastText: "#242426",
+    },
+    secondary: {
+      main: "#f5f5ff",
+      light: "#a1a1a5",
     },
     text: {
       primary: "#535357",
