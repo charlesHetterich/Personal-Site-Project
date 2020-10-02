@@ -1,39 +1,11 @@
 import React from "react";
 import { IconButton, withStyles, Box } from "@material-ui/core";
 
-import {
-  faTwitter,
-  faGithub,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
-import { IconDefinition, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Text } from "../Util/Components";
-
 export const Footer: React.FunctionComponent = () => {
-  return (
-    <Wrapper>
-      <LinksContainer>
-        <LinkButton
-          icon={faInstagram}
-          link="https://www.instagram.com/charleshetterich"
-        />
-        <LinkButton icon={faTwitter} link="https://twitter.com/Chazz_Edward" />
-        <LinkButton
-          icon={faGithub}
-          link="https://github.com/charlesHetterich"
-        />
-        <LinkButton
-          icon={faEnvelope}
-          link="mailto:hetterich.charles@gmail.com"
-        />
-      </LinksContainer>
-      <Label variant="body1" color="textPrimary">
-        If there’s anything you’d like to talk about- get in touch!
-      </Label>
-    </Wrapper>
-  );
+  return <Wrapper></Wrapper>;
 };
 
 /* Let's us open the link in a new tab */
@@ -64,37 +36,5 @@ const Link = withStyles((theme) => ({
 }))(IconButton);
 
 const Wrapper = withStyles((theme) => ({
-  root: {
-    display: "flex",
-    padding: 50,
-    paddingLeft: "8vw",
-    paddingRight: "8vw",
-    [theme.breakpoints.up("sm")]: {
-      alignItems: "center",
-    },
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column-reverse",
-      alignItems: "flex-start",
-    },
-  },
+  root: {},
 }))(Box);
-
-const LinksContainer = withStyles((theme) => ({
-  root: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "left",
-  },
-}))(Box);
-
-const Label = withStyles((theme) => ({
-  root: {
-    flex: 1,
-    fontSize: "0.75em",
-    fontFamily: "'Roboto Slab', serif",
-    fontWeight: 400,
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: 30,
-    },
-  },
-}))(Text);

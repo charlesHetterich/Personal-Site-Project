@@ -1,19 +1,7 @@
 import { ThemeOptions, createMuiTheme } from "@material-ui/core";
 
-const genericTheme: ThemeOptions = {
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 450,
-      md: 800,
-      lg: 1280,
-      xl: 1920,
-    },
-  },
-};
-
-const lightTheme: ThemeOptions = {
-  ...genericTheme,
+export const theme = createMuiTheme({
+  breakpoints: {},
   palette: {
     type: "light",
     background: {
@@ -32,36 +20,24 @@ const lightTheme: ThemeOptions = {
       secondary: "#535357",
     },
   },
-};
-
-const darkTheme: ThemeOptions = {
-  ...genericTheme,
-  palette: {
-    type: "dark",
-    background: {
-      default: "#242426",
+  typography: {
+    fontFamily: "roboto",
+    h1: {
+      fontWeight: 900,
+      fontSize: 70,
+      color: "#333333",
     },
-    primary: {
-      main: "#f5f5ff",
-      contrastText: "#242426",
+    h2: {
+      fontWeight: 500,
+      fontSize: 25,
+      fontStyle: "italic",
+      color: "#808080",
     },
-    secondary: {
-      main: "#f5f5ff",
-      light: "#a1a1a5",
-    },
-    text: {
-      primary: "#535357",
-      secondary: "#424245",
+    body1: {
+      fontWeight: 500,
+      fontSize: 25,
+      color: "#333333",
+      lineHeight: 1.75,
     },
   },
-};
-
-export type ThemeMode = "light" | "dark";
-export const GetTheme = (theme: ThemeMode) => {
-  switch (theme) {
-    case "light":
-      return createMuiTheme(lightTheme);
-    case "dark":
-      return createMuiTheme(darkTheme);
-  }
-};
+});
