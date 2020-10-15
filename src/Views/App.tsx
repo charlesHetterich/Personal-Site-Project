@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 
 import { theme } from "../Util/Theme";
+import { MainLinkSection, Emoji } from "../Util/Components";
 
 export default function App() {
   return (
@@ -21,20 +22,52 @@ export default function App() {
           }}
         >
           <Header variant="h1">Charles Hetterich</Header>
-          <SubTitle variant="h2">
-            A conglomeration of things he has done, created, or thought{" "}
+          <SubTitle variant="h3">
+            A conglomeration of things he has done, created, or thought
           </SubTitle>
-          <Body variant="body1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris
+          <Body>
+            Hello <Emoji symbol="👋" />— I maintain this website in order to
+            provide a better context of who I am as a professional & as a
+            person. I also use this site as a corner of the web to personalize &
+            call my own! Hope you enjoy your stay.
           </Body>
-          <Body variant="body1">
-            anisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+          <Body>
+            I am a Designer & Software Developer. Currently I spend my time
+            working freelance jobs, as well as on my own business ventures.
           </Body>
+          <Body>
+            Without further ado, here are some things! From me, to you
+            <Emoji symbol="👇" />
+          </Body>
+          <MainLinkSection
+            title="Programming Projects"
+            color="#8F96FF"
+            content={[
+              { text: "Soma", link: "#" },
+              { text: "BackyardBlitz", link: "#" },
+              { text: "Pencil The Game", link: "#" },
+              { text: "Game Changer", link: "#" },
+            ]}
+          />
+          <MainLinkSection
+            title="Previous Jobs"
+            color="#FCC667"
+            content={[
+              { text: "*Table Date", link: "#" },
+              { text: "MBMS", link: "#" },
+              { text: "Diver Now", link: "#" },
+              { text: "PA Joe", link: "#" },
+            ]}
+          />
+          <MainLinkSection
+            title="Design Stuff"
+            color="#FC9090"
+            content={[
+              { text: "My history with design", link: "#" },
+              { text: "This website", link: "#" },
+              { text: "App Design", link: "#" },
+            ]}
+          />
         </InnerContainer>
       </OuterContainer>
     </ThemeProvider>
@@ -54,7 +87,8 @@ const OuterContainer = withStyles((theme) => ({
 const InnerContainer = withStyles((theme) => ({
   root: {
     marginTop: 150,
-    width: 900,
+    marginBottom: 200,
+    width: 1000,
     maxWidth: "100vw",
     padding: 50,
     [theme.breakpoints.down("sm")]: {
@@ -66,7 +100,6 @@ const InnerContainer = withStyles((theme) => ({
     },
   },
 }))(Box);
-
 const Header = withStyles((theme) => ({
   root: {
     marginBottom: 40,
@@ -76,5 +109,5 @@ const SubTitle = withStyles((theme) => ({
   root: { marginBottom: 70 },
 }))(Typography);
 const Body = withStyles((theme) => ({
-  root: { marginBottom: 30 },
+  root: { marginBottom: 40 },
 }))(Typography);

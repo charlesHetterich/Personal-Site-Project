@@ -1,4 +1,4 @@
-import { ThemeOptions, createMuiTheme } from "@material-ui/core";
+import { createMuiTheme } from "@material-ui/core";
 
 export const theme = createMuiTheme({
   breakpoints: {},
@@ -24,10 +24,15 @@ export const theme = createMuiTheme({
     fontFamily: "roboto",
     h1: {
       fontWeight: 900,
-      fontSize: 70,
+      fontSize: 80,
       color: "#333333",
     },
     h2: {
+      fontWeight: 700,
+      fontSize: 35,
+      color: "#333333",
+    },
+    h3: {
       fontWeight: 500,
       fontSize: 25,
       fontStyle: "italic",
