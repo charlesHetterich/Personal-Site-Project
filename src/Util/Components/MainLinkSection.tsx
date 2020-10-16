@@ -14,10 +14,13 @@ export const MainLinkSection: React.FunctionComponent<{
         // Create style for this specific link
         const ThisLink = withStyles((theme) => ({
           root: {
-            //color: color,
-            opacity: i % 2 === 0 ? 1 : 0.5,
-            backgroundColor: color,
             color: theme.palette.background.default,
+            backgroundColor: color,
+            boxShadow: "5px 5px " + "#333333" + "ff",
+            transition: "0.2s box-shadow ",
+            "&:hover": {
+              boxShadow: "10px 10px #333333ff",
+            },
           },
         }))(StyledLink);
 
@@ -33,7 +36,12 @@ export const MainLinkSection: React.FunctionComponent<{
 };
 
 const Container = withStyles((theme) => ({
-  root: { marginTop: 100 },
+  root: {
+    marginTop: 100,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 50,
+    },
+  },
 }))(Box);
 const Header = withStyles((theme) => ({
   root: { marginBottom: 25 },

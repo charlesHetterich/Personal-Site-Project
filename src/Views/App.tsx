@@ -41,7 +41,7 @@ export default function App() {
           </Body>
           <MainLinkSection
             title="Programming Projects"
-            color="#8F96FF"
+            color="#8763ff"
             content={[
               { text: "Soma", link: "#" },
               { text: "BackyardBlitz", link: "#" },
@@ -51,7 +51,7 @@ export default function App() {
           />
           <MainLinkSection
             title="Previous Jobs"
-            color="#FCC667"
+            color="#f58b45"
             content={[
               { text: "*Table Date", link: "#" },
               { text: "MBMS", link: "#" },
@@ -61,11 +61,19 @@ export default function App() {
           />
           <MainLinkSection
             title="Design Stuff"
-            color="#FC9090"
+            color="#ff6463"
             content={[
               { text: "My history with design", link: "#" },
               { text: "This website", link: "#" },
               { text: "App Design", link: "#" },
+            ]}
+          />
+          <MainLinkSection
+            title="Miscellaneous"
+            color="#00d688"
+            content={[
+              { text: "Music", link: "#" },
+              { text: "Recipes", link: "#" },
             ]}
           />
 
@@ -104,11 +112,24 @@ const InnerContainer = withStyles((theme) => ({
 const Header = withStyles((theme) => ({
   root: {
     marginBottom: 40,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 25,
+    },
   },
 }))(Typography);
 const SubTitle = withStyles((theme) => ({
-  root: { marginBottom: 70 },
+  root: {
+    marginBottom: 70,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 40,
+    },
+  },
 }))(Typography);
 const Body = withStyles((theme) => ({
-  root: { marginBottom: 40 },
+  root: {
+    marginBottom: 40,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 25,
+    },
+  },
 }))(Typography);

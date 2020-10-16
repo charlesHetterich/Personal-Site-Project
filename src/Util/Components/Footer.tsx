@@ -45,12 +45,19 @@ const FooterLink: React.FunctionComponent<{
 };
 
 const Container = withStyles((theme) => ({
-  root: { marginTop: 200 },
+  root: {
+    marginTop: 200,
+    marginBottom: 25,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 100,
+      textAlign: "center",
+    },
+  },
 }))(Box);
 
 const StyledLink = withStyles((theme) => ({
   root: {
-    marginRight: "10%",
+    marginRight: "14%",
     fontSize: 25,
     opacity: 0.7,
     cursor: "pointer",
@@ -58,5 +65,15 @@ const StyledLink = withStyles((theme) => ({
       opacity: 1,
     },
     transition: "opacity 0.2s",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 20,
+
+      // distribute margin on left and right side so we are actually centered
+      marginLeft: "7%",
+      marginRight: "7%",
+    },
+    [theme.breakpoints.down(450)]: {
+      fontSize: 15,
+    },
   },
 }))(Link);
