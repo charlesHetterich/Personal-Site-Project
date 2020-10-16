@@ -8,14 +8,14 @@ export const MainLinkSection: React.FunctionComponent<{
   content: { text: string; link: string }[];
 }> = ({ title, color, content }) => {
   return (
-    <LinkSectionContainer>
+    <Container>
       <Header variant="h2">{title}</Header>
       {content.map((obj, i) => {
         // Create style for this specific link
         const ThisLink = withStyles((theme) => ({
           root: {
             //color: color,
-            opacity: i % 2 === 0 ? 1 : 0.7,
+            opacity: i % 2 === 0 ? 1 : 0.5,
             backgroundColor: color,
             color: theme.palette.background.default,
           },
@@ -28,11 +28,11 @@ export const MainLinkSection: React.FunctionComponent<{
           </ThisLink>
         );
       })}
-    </LinkSectionContainer>
+    </Container>
   );
 };
 
-const LinkSectionContainer = withStyles((theme) => ({
+const Container = withStyles((theme) => ({
   root: { marginTop: 100 },
 }))(Box);
 const Header = withStyles((theme) => ({

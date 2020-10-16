@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 
 import { theme } from "../Util/Theme";
-import { MainLinkSection, Emoji } from "../Util/Components";
+import { MainLinkSection, Emoji, Footer } from "../Util/Components";
 
 export default function App() {
   return (
@@ -68,6 +68,8 @@ export default function App() {
               { text: "App Design", link: "#" },
             ]}
           />
+
+          <Footer />
         </InnerContainer>
       </OuterContainer>
     </ThemeProvider>
@@ -87,7 +89,6 @@ const OuterContainer = withStyles((theme) => ({
 const InnerContainer = withStyles((theme) => ({
   root: {
     marginTop: 150,
-    marginBottom: 200,
     width: 1000,
     maxWidth: "100vw",
     padding: 50,
