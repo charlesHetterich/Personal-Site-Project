@@ -74,6 +74,7 @@ export default function App() {
             content={[
               { text: "Music", link: "#" },
               { text: "Recipes", link: "#" },
+              { text: "Travel Photos", link: "#" },
             ]}
           />
 
