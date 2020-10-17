@@ -39,12 +39,17 @@ const Container = withStyles((theme) => ({
   root: {
     marginTop: 100,
     [theme.breakpoints.down("sm")]: {
-      marginTop: 50,
+      marginTop: 70,
     },
   },
 }))(Box);
 const Header = withStyles((theme) => ({
-  root: { marginBottom: 25 },
+  root: {
+    marginBottom: 25,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 0,
+    },
+  },
 }))(Typography);
 const StyledLink = withStyles((theme) => ({
   root: {
@@ -55,6 +60,9 @@ const StyledLink = withStyles((theme) => ({
     display: "inline-block",
     "&:focus, &:hover, &:visited, &:link, &:active": {
       textDecoration: "none",
+    },
+    [theme.breakpoints.down("sm")]: {
+      margin: 10,
     },
   },
 }))(Link);
