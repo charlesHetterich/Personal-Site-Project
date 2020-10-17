@@ -16,7 +16,7 @@ export const MainLinkSection: React.FunctionComponent<{
           root: {
             color: theme.palette.background.default,
             backgroundColor: color,
-            boxShadow: "5px 5px " + "#333333" + "ff",
+            boxShadow: "5px 5px #333333ff",
             transition: "0.2s box-shadow ",
             "&:hover": {
               boxShadow: "10px 10px #333333ff",
