@@ -28,10 +28,10 @@ export function Home() {
         title="Programming Projects"
         color="#8763ff"
         content={[
-          { text: "Soma", link: "#" },
-          { text: "BackyardBlitz", link: "#" },
-          { text: "Pencil The Game", link: "#" },
-          { text: "Game Changer", link: "#" },
+          { text: "SOMA", link: "/soma" },
+          { text: "Backyard Blitz", link: "/backyard-blitz" },
+          { text: "Pencil The Game", link: "/pencil-the-game" },
+          { text: "Game Changer", link: "/game-changer" },
         ]}
       />
       <MainLinkSection
@@ -60,6 +60,8 @@ export function Home() {
           { text: "Music", link: "#" },
           { text: "Recipes", link: "#" },
           { text: "Travel Photos", link: "#" },
+          { text: "Resume", link: "#" },
+          { text: "Podcast", link: "#" },
         ]}
       />
     </Container>

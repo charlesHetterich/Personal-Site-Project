@@ -1,10 +1,13 @@
 import React from "react";
 import { ThemeProvider, CssBaseline, Box, withStyles } from "@material-ui/core";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { theme } from "./Util/Theme";
 
+import { Lost404 } from "./Views/404";
 import { Home } from "./Views/Home";
+import { Soma } from "./Views/Soma";
+
 import { Footer } from "./Util/Components";
 
 export default function App() {
@@ -14,7 +17,11 @@ export default function App() {
         <CssBaseline />
         <OuterContainer>
           <InnerContainer>
-            <Route exact path="/" component={Home}></Route>
+            <Switch>
+              <Route exact path="/" component={Home}></Route>
+              <Route exact path="/soma" component={Soma}></Route>
+              <Route component={Lost404}></Route>
+            </Switch>
             <Footer />
           </InnerContainer>
         </OuterContainer>
