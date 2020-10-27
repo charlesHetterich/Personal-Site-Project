@@ -39,7 +39,7 @@ export const Soma: React.FunctionComponent = () => {
         number of moves. Pay close attention as you play in order to pick up on
         a few tricks needed to bring down your move count.
       </Body>
-      <Image src={soma1} displayType="regular" />
+      <Image src={soma1} />
       <Body>
         As you might be able to tell from the GIF, the core concept of this game
         is that only tiles of the same color can combine, cycling between red,
@@ -79,7 +79,7 @@ export const Soma: React.FunctionComponent = () => {
         make as the player. I used sound effects, subtle graphics, and added
         physics to the board to pull this off.
       </Body>
-      <Image src={soma2} displayType="regular" />
+      <Image src={soma2} />
       <Body>
         Adding physics to the board ended up being a super cool effect that
         brought the puzzle to life. I ran with this idea and added all of those
