@@ -1,7 +1,7 @@
 import React from "react";
 import { withStyles, Box } from "@material-ui/core";
 import { CustomLink } from "./Links";
-import { SubHeader } from "./Text";
+import { SubTitle } from "./Text";
 
 // Generates the sub-sections in home page with title & list of links
 export const MainLinkSection: React.FunctionComponent<{
@@ -12,7 +12,7 @@ export const MainLinkSection: React.FunctionComponent<{
   return (
     <Container>
       {/* Title */}
-      <SubHeader>{title}</SubHeader>
+      <SubTitle>{title}</SubTitle>
       {
         // Create all links
         content.map((obj, i) => {

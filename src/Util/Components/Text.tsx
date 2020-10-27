@@ -16,7 +16,7 @@ export const Title: React.FunctionComponent = ({ children }) => {
   return <_title variant="h1">{children}</_title>;
 };
 
-const _subHeader = withStyles((theme) => ({
+const _subTitle = withStyles((theme) => ({
   root: {
     marginBottom: 25,
     [theme.breakpoints.down("sm")]: {
@@ -24,8 +24,8 @@ const _subHeader = withStyles((theme) => ({
     },
   },
 }))(Typography);
-export const SubHeader: React.FunctionComponent = ({ children }) => {
-  return <_subHeader variant="h2">{children}</_subHeader>;
+export const SubTitle: React.FunctionComponent = ({ children }) => {
+  return <_subTitle variant="h2">{children}</_subTitle>;
 };
 
 const _body = withStyles((theme) => ({

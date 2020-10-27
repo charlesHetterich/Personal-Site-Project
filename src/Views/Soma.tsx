@@ -4,31 +4,29 @@ import { withStyles, Box } from "@material-ui/core";
 import {
   CustomArticleComponents,
   Image,
-  Title,
-  SubHeader,
+  SubTitle,
   Body,
+  Header,
 } from "../Util/Components";
 
 import soma1 from "../Assets/Images/soma1.gif";
 import soma2 from "../Assets/Images/soma2.gif";
 
-const { BackButton, FilledLink, InlineLink } = CustomArticleComponents({
-  filledColor: "#8763ff",
+const { InlineLink } = CustomArticleComponents({
   inlineColor: "#8763ff",
-  backColor: "#ff6463",
 });
 
 export const Soma: React.FunctionComponent = () => {
   return (
     <Container>
-      <BackButton />
-      <Title>SOMA</Title>
-      <FilledLink href="/" type="external">
-        Repository
-      </FilledLink>
-      <FilledLink href="/" type="external">
-        Download (Windows)
-      </FilledLink>
+      <Header
+        title="SOMA"
+        links={[
+          { text: "Repository", href: "/" },
+          { text: "Repository", href: "/" },
+        ]}
+        color="#ff6463"
+      />
       <Body>
         Solve puzzles accompanied by the relaxing{" "}
         <InlineLink
@@ -51,7 +49,7 @@ export const Soma: React.FunctionComponent = () => {
       <Body>
         There are a total of 15 levels in the game you can work through.
       </Body>
-      <SubHeader>Design Goals</SubHeader>
+      <SubTitle>Design Goals</SubTitle>
       <Body>
         I spent a lot of this project's lifespan working out <i>'game feel'</i>{" "}
         as well as trying to teach the player as much as possible about game
@@ -97,7 +95,7 @@ export const Soma: React.FunctionComponent = () => {
         unnoticed. And then people would struggle with levels I thought the
         solutions to would be obvious.
       </Body>
-      <SubHeader>Flaws</SubHeader>
+      <SubTitle>Flaws</SubTitle>
       <Body>
         One of the biggest flaws of this game is the difficulty curve, like I
         just mentioned before. Levels that were meant to be easy would take much

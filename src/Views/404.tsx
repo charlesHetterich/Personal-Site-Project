@@ -2,14 +2,12 @@ import React from "react";
 
 import { withStyles, Box } from "@material-ui/core";
 
-import { CustomLink, SubHeader } from "../Util/Components";
+import { CustomLink, SubTitle } from "../Util/Components";
 
 export const Lost404: React.FunctionComponent = () => {
   return (
     <Container>
-      <SubHeader>
-        Hello traveler, it seems that you have lost your way.
-      </SubHeader>
+      <SubTitle>Hello traveler, it seems that you have lost your way.</SubTitle>
       <CustomLink
         href="/"
         color="#ff6463"

@@ -85,33 +85,25 @@ export const CustomLink: React.FunctionComponent<{
   );
 };
 
+export const BackButton: React.FunctionComponent<{ color: string }> = ({
+  color,
+}) => {
+  return (
+    <CustomLink href="/" color={color} linkStyle="filled" linkType="internal">
+      <FontAwesomeIcon icon={faArrowLeft} />
+    </CustomLink>
+  );
+};
+
 // Create custom set up links for each article
 export function CustomArticleComponents({
-  filledColor,
   inlineColor,
-  backColor,
 }: {
-  filledColor: string;
   inlineColor: string;
-  backColor: string;
 }): {
-  FilledLink: React.FunctionComponent<{ href: string; type: LinkType }>;
   InlineLink: React.FunctionComponent<{ href: string; type: LinkType }>;
-  BackButton: React.FunctionComponent;
 } {
   return {
-    FilledLink: ({ href, type, children }) => {
-      return (
-        <CustomLink
-          href={href}
-          color={filledColor}
-          linkStyle="filled"
-          linkType={type}
-        >
-          {children}
-        </CustomLink>
-      );
-    },
     InlineLink: ({ href, type, children }) => {
       return (
         <CustomLink
@@ -121,18 +113,6 @@ export function CustomArticleComponents({
           linkType={type}
         >
           {children}
-        </CustomLink>
-      );
-    },
-    BackButton: () => {
-      return (
-        <CustomLink
-          href="/"
-          color={backColor}
-          linkStyle="filled"
-          linkType="internal"
-        >
-          <FontAwesomeIcon icon={faArrowLeft} />
         </CustomLink>
       );
     },
