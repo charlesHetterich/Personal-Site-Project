@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-pascal-case */
+//    ^ do this so that we can get away with our _xX components
+
 import React from "react";
 import { withStyles, Typography } from "@material-ui/core";
 
