@@ -43,12 +43,14 @@ const _underlinedLink = withStyles((theme) => ({
 export const CustomLink: React.FunctionComponent<{
   variant?: VariantType;
   href?: string;
+  classes?: { root: string };
   color: string;
   linkType: LinkType;
   linkStyle: LinkStyle;
 }> = ({
   variant = "body1",
   href,
+  classes,
   color: bgColor,
   linkType,
   linkStyle,
@@ -74,6 +76,7 @@ export const CustomLink: React.FunctionComponent<{
 
   return (
     <ThisLink
+      className={classes?.root}
       variant={variant ?? "body1"}
       onClick={() => {
         // Open page in this tab or a new tab

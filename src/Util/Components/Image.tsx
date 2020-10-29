@@ -44,5 +44,9 @@ const OuterContainer = withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    marginBottom: 40,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 25,
+    },
   },
 }))(Box);
