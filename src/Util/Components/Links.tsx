@@ -88,13 +88,21 @@ export const CustomLink: React.FunctionComponent<{
   );
 };
 
+const _backButton = withStyles((theme) => ({
+  root: {
+    marginBottom: 120,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 75,
+    },
+  },
+}))(CustomLink);
 export const BackButton: React.FunctionComponent<{ color: string }> = ({
   color,
 }) => {
   return (
-    <CustomLink href="/" color={color} linkStyle="filled" linkType="internal">
+    <_backButton href="/" color={color} linkStyle="filled" linkType="internal">
       <FontAwesomeIcon icon={faArrowLeft} />
-    </CustomLink>
+    </_backButton>
   );
 };
 

@@ -1,12 +1,17 @@
 import React from "react";
 import { withStyles, Box, Typography } from "@material-ui/core";
 
-import { MainLinkSection, Emoji } from "../Util/Components";
+import {
+  MainLinkSection,
+  Emoji,
+  Title as _title,
+  Body as _body,
+} from "../Util/Components";
 
 export function Home() {
   return (
     <Container>
-      <Header variant="h1">Charles Hetterich</Header>
+      <Header>Charles Hetterich</Header>
       <SubTitle variant="h3">
         A conglomeration of things he has done, created, or thought
       </SubTitle>
@@ -78,7 +83,7 @@ const Header = withStyles((theme) => ({
       marginBottom: 25,
     },
   },
-}))(Typography);
+}))(_title);
 const SubTitle = withStyles((theme) => ({
   root: {
     marginBottom: 70,
@@ -94,4 +99,4 @@ const Body = withStyles((theme) => ({
       marginBottom: 25,
     },
   },
-}))(Typography);
+}))(_body);

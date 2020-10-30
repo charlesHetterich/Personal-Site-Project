@@ -1,7 +1,7 @@
 import React from "react";
 import { Title } from "./Text";
 import { CustomLink, BackButton } from "./Links";
-import { Box } from "@material-ui/core";
+import { Box, withStyles } from "@material-ui/core";
 
 export const Header: React.FunctionComponent<{
   title: string;
@@ -9,7 +9,7 @@ export const Header: React.FunctionComponent<{
   color: string;
 }> = ({ title, links, color }) => {
   return (
-    <Box>
+    <Container>
       <BackButton color={color} />
       <Title>{title}</Title>
       {links.map((obj) => {
@@ -24,6 +24,15 @@ export const Header: React.FunctionComponent<{
           </CustomLink>
         );
       })}
-    </Box>
+    </Container>
   );
 };
+
+const Container = withStyles((theme) => ({
+  root: {
+    marginBottom: 60,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 35,
+    },
+  },
+}))(Box);

@@ -5,27 +5,35 @@ import React from "react";
 import { withStyles, Typography } from "@material-ui/core";
 
 const _title = withStyles((theme) => ({
-  root: {
-    marginBottom: 40,
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: 25,
-    },
-  },
+  root: {},
 }))(Typography);
-export const Title: React.FunctionComponent = ({ children }) => {
-  return <_title variant="h1">{children}</_title>;
+export const Title: React.FunctionComponent<{ classes?: { root: string } }> = ({
+  classes,
+  children,
+}) => {
+  return (
+    <_title className={classes?.root} variant="h1">
+      {children}
+    </_title>
+  );
 };
 
 const _subTitle = withStyles((theme) => ({
   root: {
-    marginBottom: 25,
+    marginBottom: 0,
     [theme.breakpoints.down("sm")]: {
       marginBottom: 0,
     },
   },
 }))(Typography);
-export const SubTitle: React.FunctionComponent = ({ children }) => {
-  return <_subTitle variant="h2">{children}</_subTitle>;
+export const SubTitle: React.FunctionComponent<{
+  classes?: { root: string };
+}> = ({ classes, children }) => {
+  return (
+    <_subTitle className={classes?.root} variant="h2">
+      {children}
+    </_subTitle>
+  );
 };
 
 const _body = withStyles((theme) => ({
@@ -36,6 +44,9 @@ const _body = withStyles((theme) => ({
     },
   },
 }))(Typography);
-export const Body: React.FunctionComponent = ({ children }) => {
-  return <_body>{children}</_body>;
+export const Body: React.FunctionComponent<{ classes?: { root: string } }> = ({
+  classes,
+  children,
+}) => {
+  return <_body className={classes?.root}>{children}</_body>;
 };

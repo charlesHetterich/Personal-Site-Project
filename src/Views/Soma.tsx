@@ -23,7 +23,7 @@ export const Soma: React.FunctionComponent = () => {
         title="SOMA"
         links={[
           { text: "Repository", href: "/" },
-          { text: "Repository", href: "/" },
+          { text: "Download (Windows)", href: "/" },
         ]}
         color="#ff6463"
       />
