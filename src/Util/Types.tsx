@@ -16,5 +16,5 @@ export type VariantType =  // comes from material-ui variants
   | "srOnly"
   | undefined;
 
-export type LinkType = "external" | "internal";
+export type LinkType = "external" | "internal" | "download";
 export type LinkStyle = "underline" | "filled";

@@ -4,9 +4,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { theme } from "./Util/Theme";
 
-import { Lost404 } from "./Views/404";
 import { Home } from "./Views/Home";
 import { Soma } from "./Views/Soma";
+import { PencilTheGame } from "./Views/Pencil The Game";
+import { Lost404 } from "./Views/404";
 
 import { Footer } from "./Util/Components";
 
@@ -20,6 +21,11 @@ export default function App() {
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <Route exact path="/soma" component={Soma}></Route>
+              <Route
+                exact
+                path="/pencil-the-game"
+                component={PencilTheGame}
+              ></Route>
               <Route component={Lost404}></Route>
             </Switch>
             <Footer />
@@ -43,7 +49,7 @@ const InnerContainer = withStyles((theme) => ({
   root: {
     marginTop: 150,
     width: 1000,
-    maxWidth: "100vw",
+    maxWidth: "100%",
     padding: 50,
     [theme.breakpoints.down("sm")]: {
       marginTop: 80,

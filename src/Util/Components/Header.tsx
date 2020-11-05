@@ -2,10 +2,15 @@ import React from "react";
 import { Title } from "./Text";
 import { CustomLink, BackButton } from "./Links";
 import { Box, withStyles } from "@material-ui/core";
-
+import { LinkType } from "../Types";
 export const Header: React.FunctionComponent<{
   title: string;
-  links: { text: string; href: string }[];
+  links: {
+    text: string;
+    href: string;
+    linkType?: LinkType;
+    downloadName?: string;
+  }[];
   color: string;
 }> = ({ title, links, color }) => {
   return (
@@ -17,7 +22,8 @@ export const Header: React.FunctionComponent<{
           <CustomLink
             href={obj.href}
             color={color}
-            linkType="external"
+            downloadName={obj.downloadName}
+            linkType={obj.linkType ?? "external"}
             linkStyle="filled"
           >
             {obj.text}

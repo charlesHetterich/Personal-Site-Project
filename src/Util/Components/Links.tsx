@@ -43,6 +43,7 @@ const _underlinedLink = withStyles((theme) => ({
 export const CustomLink: React.FunctionComponent<{
   variant?: VariantType;
   href?: string;
+  downloadName?: string;
   classes?: { root: string };
   color: string;
   linkType: LinkType;
@@ -50,6 +51,7 @@ export const CustomLink: React.FunctionComponent<{
 }> = ({
   variant = "body1",
   href,
+  downloadName,
   classes,
   color: bgColor,
   linkType,
@@ -76,12 +78,18 @@ export const CustomLink: React.FunctionComponent<{
 
   return (
     <ThisLink
+      download={downloadName}
+      href={linkType === "download" ? href : undefined}
       className={classes?.root}
       variant={variant ?? "body1"}
-      onClick={() => {
-        // Open page in this tab or a new tab
-        window.open(href, linkType === "external" ? "_blank" : "_self");
-      }}
+      onClick={
+        linkType !== "download"
+          ? () => {
+              // Open page in this tab or a new tab
+              window.open(href, linkType === "external" ? "_blank" : "_self");
+            }
+          : undefined
+      }
     >
       {children}
     </ThisLink>

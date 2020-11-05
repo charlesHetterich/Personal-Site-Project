@@ -22,8 +22,16 @@ export const Soma: React.FunctionComponent = () => {
       <Header
         title="SOMA"
         links={[
-          { text: "Repository", href: "/" },
-          { text: "Download (Windows)", href: "/" },
+          {
+            text: "Repository",
+            href: "https://github.com/charlesHetterich/soma",
+          },
+          {
+            text: "Download (Windows)",
+            href: require("../Assets/downloads/SOMA.zip"),
+            linkType: "download",
+            downloadName: "SOMA",
+          },
         ]}
         color="#ff6463"
       />
@@ -47,7 +55,7 @@ export const Soma: React.FunctionComponent = () => {
         a few more mechanics are introduced.
       </Body>
       <Body>
-        There are a total of 15 levels in the game you can work through.
+        There are a total of 30 levels in the game you can work through.
       </Body>
       <SubTitle>Design Goals</SubTitle>
       <Body>
