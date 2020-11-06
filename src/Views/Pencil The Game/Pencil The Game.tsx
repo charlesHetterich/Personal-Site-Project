@@ -7,9 +7,9 @@ import {
   SubTitle,
   Body,
   Header,
-} from "../Util/Components";
+} from "../../Util/Components";
 
-import soma1 from "../Assets/Images/Pencil.mp4";
+import soma1 from "./Assets/Pencil.mp4";
 
 const { InlineLink } = CustomArticleComponents({
   inlineColor: "#8763ff",

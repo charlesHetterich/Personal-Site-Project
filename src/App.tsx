@@ -5,8 +5,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { theme } from "./Util/Theme";
 
 import { Home } from "./Views/Home";
-import { Soma } from "./Views/Soma";
-import { PencilTheGame } from "./Views/Pencil The Game";
+import { Soma } from "./Views/Soma/Soma";
+import { PencilTheGame } from "./Views/Pencil The Game/Pencil The Game";
 import { Lost404 } from "./Views/404";
 
 import { Footer } from "./Util/Components";

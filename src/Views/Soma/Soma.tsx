@@ -7,10 +7,10 @@ import {
   SubTitle,
   Body,
   Header,
-} from "../Util/Components";
+} from "../../Util/Components";
 
-import soma1 from "../Assets/Images/soma1.gif";
-import soma2 from "../Assets/Images/soma2.gif";
+import soma1 from "./Assets/soma1.gif";
+import soma2 from "./Assets/soma2.gif";
 
 const { InlineLink } = CustomArticleComponents({
   inlineColor: "#8763ff",
@@ -28,7 +28,7 @@ export const Soma: React.FunctionComponent = () => {
           },
           {
             text: "Download (Windows)",
-            href: require("../Assets/downloads/SOMA.zip"),
+            href: require("./Assets/SOMA.zip"),
             linkType: "download",
             downloadName: "SOMA",
           },
