@@ -9,12 +9,17 @@ const RegularContainer = withStyles((theme) => ({
 }))(Box);
 const MobileContainer = withStyles((theme) => ({
   root: {
-    border: "10px solid #000000",
-    borderRadius: 20,
+    border: "15px solid #000000",
+    borderRadius: 30,
     overflow: "hidden",
-    width: 500,
+    width: 400,
     flex: 1,
     maxWidth: "100%",
+
+    [theme.breakpoints.down(350)]: {
+      border: "7px solid #000000",
+      borderRadius: 20,
+    },
   },
 }))(Box);
 
