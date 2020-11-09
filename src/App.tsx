@@ -7,6 +7,7 @@ import { theme } from "./Util/Theme";
 import { Home } from "./Views/Home";
 import { Soma } from "./Views/Soma/Soma";
 import { PencilTheGame } from "./Views/Pencil The Game/Pencil The Game";
+import { BackyardBlitz } from "./Views/Backyard Blitz/Backyard Blitz";
 import { Lost404 } from "./Views/404";
 
 import { Footer } from "./Util/Components";
@@ -25,6 +26,11 @@ export default function App() {
                 exact
                 path="/pencil-the-game"
                 component={PencilTheGame}
+              ></Route>
+              <Route
+                exact
+                path="/backyard-blitz"
+                component={BackyardBlitz}
               ></Route>
               <Route component={Lost404}></Route>
             </Switch>
