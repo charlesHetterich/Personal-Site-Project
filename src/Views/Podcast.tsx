@@ -1,18 +1,7 @@
 import React from "react";
 import { withStyles, Box } from "@material-ui/core";
 
-import {
-  CustomArticleComponents,
-  Image,
-  SubTitle,
-  Body,
-  Header,
-  Emoji,
-} from "../Util/Components";
-
-const { InlineLink } = CustomArticleComponents({
-  inlineColor: "#8763ff",
-});
+import { Body, Header } from "../Util/Components";
 
 export const Podcast: React.FunctionComponent = () => {
   return (

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-pascal-case */
+
 import React from "react";
 import { Link, withStyles } from "@material-ui/core";
 
