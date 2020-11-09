@@ -66,7 +66,7 @@ export function Home() {
           { text: "Recipes", link: "#" },
           { text: "Travel Photos", link: "#" },
           { text: "Resume", link: "#" },
-          { text: "Podcast", link: "#" },
+          { text: "Podcast", link: "/podcast" },
         ]}
       />
     </Container>
