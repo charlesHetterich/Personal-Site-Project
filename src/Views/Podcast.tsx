@@ -1,7 +1,11 @@
 import React from "react";
 import { withStyles, Box } from "@material-ui/core";
 
-import { Body, Header } from "../Util/Components";
+import { Body, CustomArticleComponents, Header } from "../Util/Components";
+
+const { InlineLink } = CustomArticleComponents({
+  inlineColor: "#8763ff",
+});
 
 export const Podcast: React.FunctionComponent = () => {
   return (
@@ -30,9 +34,15 @@ export const Podcast: React.FunctionComponent = () => {
         color="#ff6463"
       />
       <Body>
-        <i>TLC</i> is a podcast by my friends Naomi, Marie, & myself. It's
-        loosely meant to be a conspiracy theory podcast, but more times than not
-        we get sidetracked!
+        <i>TLC</i> is a podcast by my friends{" "}
+        <InlineLink
+          type="external"
+          href="https://naomielenagrace.myportfolio.com"
+        >
+          Naomi
+        </InlineLink>
+        , Marie, & myself. It's loosely meant to be a conspiracy theory podcast,
+        but more times than not we get sidetracked!
       </Body>
       <Body>
         We started off recording on the Wellington radio when we were studying
