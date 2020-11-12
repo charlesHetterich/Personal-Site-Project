@@ -5,9 +5,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { theme } from "./Util/Theme";
 
 import { Home } from "./Views/Home";
+
 import { Soma } from "./Views/Soma/Soma";
 import { PencilTheGame } from "./Views/Pencil The Game/Pencil The Game";
 import { BackyardBlitz } from "./Views/Backyard Blitz/Backyard Blitz";
+import { GameChanger } from "./Views/Game Changer/Game Changer";
+
 import { Podcast } from "./Views/Podcast";
 
 import { Lost404 } from "./Views/404";
@@ -34,6 +37,7 @@ export default function App() {
                 path="/backyard-blitz"
                 component={BackyardBlitz}
               ></Route>
+              <Route exact path="/game-changer" component={GameChanger}></Route>
               <Route exact path="/podcast" component={Podcast}></Route>
               <Route component={Lost404}></Route>
             </Switch>
