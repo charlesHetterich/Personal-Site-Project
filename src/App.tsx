@@ -11,6 +11,8 @@ import { PencilTheGame } from "./Views/Pencil The Game/Pencil The Game";
 import { BackyardBlitz } from "./Views/Backyard Blitz/Backyard Blitz";
 import { GameChanger } from "./Views/Game Changer/Game Changer";
 
+import { MBMS } from "./Views/MBMS";
+
 import { Podcast } from "./Views/Podcast";
 
 import { Lost404 } from "./Views/404";
@@ -38,6 +40,7 @@ export default function App() {
                 component={BackyardBlitz}
               ></Route>
               <Route exact path="/game-changer" component={GameChanger}></Route>
+              <Route exact path="/mbms" component={MBMS}></Route>
               <Route exact path="/podcast" component={Podcast}></Route>
               <Route component={Lost404}></Route>
             </Switch>

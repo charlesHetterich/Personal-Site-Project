@@ -44,7 +44,7 @@ export function Home() {
         color="#f58b45"
         content={[
           { text: "*Table Date", link: "#" },
-          { text: "MBMS", link: "#" },
+          { text: "MBMS", link: "/mbms" },
           { text: "Diver Now", link: "#" },
           { text: "PA Joe", link: "#" },
         ]}
