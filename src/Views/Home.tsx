@@ -46,7 +46,7 @@ export function Home() {
           { text: "*Table Date", link: "#" },
           { text: "MBMS", link: "/mbms" },
           { text: "Diver Now", link: "#" },
-          { text: "PA Joe", link: "#" },
+          { text: "PA Joe", link: "/pa-joe" },
         ]}
       />
       <MainLinkSection
