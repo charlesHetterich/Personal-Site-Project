@@ -1,45 +1,37 @@
 import React from "react";
 import { withStyles, Box } from "@material-ui/core";
 
-import { Body, CustomArticleComponents, Header } from "../Util/Components";
-
-const { InlineLink } = CustomArticleComponents({
-  inlineColor: "#8763ff",
-});
+import { Body, Header } from "../Util/Components";
 
 export const PAJoe: React.FunctionComponent = () => {
   return (
     <Container>
       <Header title="PA Joe" links={[]} color="#ff6463" />
       <Body>
-        <i>MBMS</i> is a company in Buffalo that I interned at as a software
-        developer. It was pretty standard work— fixing bugs and creating front
-        end features for a web app was most of what I did.
+        PA Joe is a Public Adjusting company I am actively freelancing for. The
+        job has consisted of rebuilding their marketing site, creating from
+        scratch a web, iOS, and Android app, and creating an web admin panel.
       </Body>
       <Body>
-        I learned a lot on the job, as this was my first experience writing code
-        in a professional environment. It was my first time interacting with a
-        massive code base, working with a SCRUM board, seeing the importance of
-        QA, testing suites, and a bunch more. And then trying to decipher 15
-        year old pieces of code written by somebody who left the company like 7
-        years ago was, uh... just another great learning experience!
+        The app is an interface for potential clients to fill out Insurance
+        Claims. From there the Adjusters in the admin panel can fill out any
+        missing information and connect with the client. The client can sign the
+        document, and a final insurance claim form is generated.
       </Body>
       <Body>
-        Jokes aside, even though I decided to leave the company to pursue my own
-        personal goals, it was a great experience I'll always be super thankful
-        for having. My only real plight was that we used{" "}
-        <InlineLink
-          type="external"
-          href="https://docs.microsoft.com/en-us/azure/devops/repos/tfvc/what-is-tfvc?view=azure-devops"
-        >
-          TFVC
-        </InlineLink>
-        , rather than{" "}
-        <InlineLink type="external" href="https://git-scm.com/">
-          git
-        </InlineLink>
-        , which I did not love. I know that when I was there though we were
-        actively working to migrate to use git.
+        Currently we are closing in on the end of the first round of
+        development, which should be within close proximity of when the product
+        goes live. As the app does go live, I'll be able to share the marketing
+        site as well as display the app, but unfortunately I cannot share any
+        more about the unfinished product.
+      </Body>
+      <Body>
+        Working on PA Joe has been a unique experience in itself. Unlike my
+        other freelancing work, I am not actually directly developing the app.
+        I've put together a qualified team and have been managing the project as
+        a whole. It's been a great experience in getting a feeling for
+        management, leading meetings, making sure features are relayed from the
+        client to the developer as smoothly as possible, etc.
       </Body>
     </Container>
   );
