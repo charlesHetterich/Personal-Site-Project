@@ -43,7 +43,7 @@ export function Home() {
         title="Previous Jobs"
         color="#f58b45"
         content={[
-          { text: "*Table Date", link: "#" },
+          { text: "*Table Date", link: "/table-date", flags: ["inactive"] },
           { text: "MBMS", link: "/mbms" },
           { text: "Diver Now", link: "/diver-now" },
           { text: "PA Joe", link: "/pa-joe" },
@@ -53,19 +53,31 @@ export function Home() {
         title="Design Stuff"
         color="#ff6463"
         content={[
-          { text: "My history with design", link: "#" },
-          { text: "This website", link: "#" },
-          { text: "App Design", link: "#" },
+          {
+            text: "My history with design",
+            link: "/my-history-with-design",
+            flags: ["inactive"],
+          },
+          {
+            text: "This website",
+            link: "/this-website",
+            flags: ["inactive"],
+          },
+          { text: "App Design", link: "/app-design", flags: ["inactive"] },
         ]}
       />
       <MainLinkSection
         title="Miscellaneous"
         color="#00d688"
         content={[
-          { text: "Music", link: "#" },
-          { text: "Recipes", link: "#" },
-          { text: "Travel Photos", link: "#" },
-          { text: "Resume", link: "#" },
+          { text: "Music", link: "/music", flags: ["inactive"] },
+          { text: "Recipes", link: "/recipes", flags: ["inactive"] },
+          {
+            text: "Travel Photos",
+            link: "/travel-photos",
+            flags: ["inactive"],
+          },
+          { text: "Resume", link: "/resume", flags: ["inactive"] },
           { text: "Podcast", link: "/podcast" },
         ]}
       />

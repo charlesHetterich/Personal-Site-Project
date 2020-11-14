@@ -6,7 +6,7 @@ import { Link, withStyles } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-import { VariantType, LinkType, LinkStyle } from "../Types";
+import { VariantType, LinkType, LinkStyle, LinkFlags } from "../Types";
 
 const _filledLink = withStyles((theme) => ({
   root: {
@@ -50,6 +50,7 @@ export const CustomLink: React.FunctionComponent<{
   color: string;
   linkType: LinkType;
   linkStyle: LinkStyle;
+  flags?: LinkFlags;
 }> = ({
   variant = "body1",
   href,
@@ -58,6 +59,7 @@ export const CustomLink: React.FunctionComponent<{
   color: bgColor,
   linkType,
   linkStyle,
+  flags = [],
   children,
 }) => {
   // Choose custom styling based on link type
@@ -75,6 +77,7 @@ export const CustomLink: React.FunctionComponent<{
       : withStyles((theme) => ({
           root: {
             backgroundColor: bgColor,
+            color: flags.includes("inactive") ? "#ffffff44" : undefined,
           },
         }))(_filledLink);
 

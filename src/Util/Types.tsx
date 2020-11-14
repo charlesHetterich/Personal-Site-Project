@@ -18,3 +18,4 @@ export type VariantType =  // comes from material-ui variants
 
 export type LinkType = "external" | "internal" | "download";
 export type LinkStyle = "underline" | "filled";
+export type LinkFlags = "inactive"[];
