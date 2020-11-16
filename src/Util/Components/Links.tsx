@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-pascal-case */
 
 import React from "react";
-import { Link, withStyles } from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
+import { BaseLink } from "./Links/BaseLink";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -29,7 +30,7 @@ const _filledLink = withStyles((theme) => ({
     transition: "0.2s box-shadow ",
     cursor: "pointer",
   },
-}))(Link);
+}))(BaseLink);
 const _underlinedLink = withStyles((theme) => ({
   root: {
     fontWeight: 800,
@@ -40,11 +41,11 @@ const _underlinedLink = withStyles((theme) => ({
     transition: "background-color 0.2s",
     cursor: "pointer",
   },
-}))(Link);
+}))(BaseLink);
 
 export const CustomLink: React.FunctionComponent<{
   variant?: VariantType;
-  href?: string;
+  href: string;
   downloadName?: string;
   classes?: { root: string };
   color: string;
@@ -83,18 +84,11 @@ export const CustomLink: React.FunctionComponent<{
 
   return (
     <ThisLink
-      download={downloadName}
-      href={linkType === "download" ? href : undefined}
-      className={classes?.root}
+      classes={classes}
+      downloadName={downloadName}
+      href={href}
       variant={variant ?? "body1"}
-      onClick={
-        linkType !== "download"
-          ? () => {
-              // Open page in this tab or a new tab
-              window.open(href, linkType === "external" ? "_blank" : "_self");
-            }
-          : undefined
-      }
+      linkType={linkType}
     >
       {children}
     </ThisLink>

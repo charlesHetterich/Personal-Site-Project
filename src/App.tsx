@@ -19,11 +19,12 @@ import { Podcast } from "./Views/Podcast";
 
 import { Lost404 } from "./Views/404";
 
-import { Footer } from "./Util/Components";
+import { Footer, ScrollToTop } from "./Util/Components";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <ScrollToTop />
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <OuterContainer>
