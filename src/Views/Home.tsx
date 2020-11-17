@@ -70,7 +70,9 @@ export function Home() {
         title="Miscellaneous"
         color="#00d688"
         content={[
+          { text: "Contact", link: "/contact" },
           { text: "Music", link: "/music", flags: ["inactive"] },
+          { text: "Podcast", link: "/podcast" },
           { text: "Recipes", link: "/recipes", flags: ["inactive"] },
           {
             text: "Travel Photos",
@@ -78,7 +80,6 @@ export function Home() {
             flags: ["inactive"],
           },
           { text: "Resume", link: "/resume", flags: ["inactive"] },
-          { text: "Podcast", link: "/podcast" },
         ]}
       />
     </Container>

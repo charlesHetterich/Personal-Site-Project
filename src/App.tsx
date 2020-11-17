@@ -15,6 +15,7 @@ import { MBMS } from "./Views/MBMS";
 import { DiverNow } from "./Views/Diver Now/Diver Now";
 import { PAJoe } from "./Views/PA Joe";
 
+import { Contact } from "./Views/Contact";
 import { Podcast } from "./Views/Podcast";
 
 import { Lost404 } from "./Views/404";
@@ -46,6 +47,7 @@ export default function App() {
               <Route exact path="/mbms" component={MBMS}></Route>
               {/*<Route exact path="/diver-now" component={DiverNow}></Route>*/}
               <Route exact path="/pa-joe" component={PAJoe}></Route>
+              <Route exact path="/contact" component={Contact}></Route>
               <Route exact path="/podcast" component={Podcast}></Route>
               <Route component={Lost404}></Route>
             </Switch>
