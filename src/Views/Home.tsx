@@ -45,7 +45,7 @@ export function Home() {
         content={[
           { text: "*Table Date", link: "/table-date", flags: ["inactive"] },
           { text: "MBMS", link: "/mbms" },
-          { text: "Diver Now", link: "/diver-now" },
+          { text: "Diver Now", link: "/diver-now", flags: ["inactive"] },
           { text: "PA Joe", link: "/pa-joe" },
         ]}
       />

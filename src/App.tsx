@@ -44,7 +44,7 @@ export default function App() {
               ></Route>
               <Route exact path="/game-changer" component={GameChanger}></Route>
               <Route exact path="/mbms" component={MBMS}></Route>
-              <Route exact path="/diver-now" component={DiverNow}></Route>
+              {/*<Route exact path="/diver-now" component={DiverNow}></Route>*/}
               <Route exact path="/pa-joe" component={PAJoe}></Route>
               <Route exact path="/podcast" component={Podcast}></Route>
               <Route component={Lost404}></Route>
