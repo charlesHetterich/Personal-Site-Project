@@ -20,7 +20,7 @@ export const Footer: React.FunctionComponent = () => {
         i={faLinkedinIn}
         link="https://www.linkedin.com/in/chetterich/"
       />
-      <FooterLink i={faTwitter} link="https://twitter.com/Chazz_Edward" />
+      <FooterLink i={faTwitter} link="https://twitter.com/_chetter" />
       <FooterLink
         i={faInstagram}
         link="https://www.instagram.com/charleshetterich/"
