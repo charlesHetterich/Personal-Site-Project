@@ -79,7 +79,11 @@ export function Home() {
             link: "/travel-photos",
             flags: ["inactive"],
           },
-          { text: "Resume", link: "/resume", flags: ["inactive"] },
+          {
+            text: "Resume",
+            link: require("../Assets/Resume.pdf"),
+            linkType: "external",
+          },
         ]}
       />
     </Container>
