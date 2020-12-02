@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 
-import { VariantType, LinkType, LinkStyle, LinkFlags } from "../../Types";
+import { VariantType, LinkType, } from "../../Types";
 
 export const BaseLink: React.FunctionComponent<{
   variant?: VariantType;
