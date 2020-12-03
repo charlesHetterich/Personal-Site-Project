@@ -2,21 +2,19 @@ import React from "react";
 import { withStyles, Box } from "@material-ui/core";
 
 import {
-  //  CustomArticleComponents,
+  CustomArticleComponents,
   Image,
   SubTitle,
   Body,
   Header,
 } from "../../Util/Components";
 
-//import tb1 from './Assets/tb1.gif'
-import tb2 from './Assets/tb2.gif'
+import tb1 from "./Assets/tb1.gif";
+import tb2 from "./Assets/tb2.gif";
 
-/*
 const { InlineLink } = CustomArticleComponents({
   inlineColor: "#8763ff",
 });
-*/
 
 export const TableDate: React.FunctionComponent = () => {
   return (
@@ -24,53 +22,93 @@ export const TableDate: React.FunctionComponent = () => {
       <Header
         title="Table"
         links={[
-
+          {
+            text: "Executive Summary",
+            href: require("./Assets/executive summary.pdf"),
+          },
+          {
+            text: "Pitch Deck",
+            href: require("./Assets/Panasci Round 2 Pitch Deck.pdf"),
+          },
         ]}
         color="#ff6463"
       />
       <Body>
-        Table offers an alternative dating app experiences to swipe focused apps such as Tinder, Bumble, & Hinge. The primary goal of Table is to <b>shift the focus from swiping to conversation</b>.
+        Table is a dating app where members go on 24 hour texting dates where
+        they can have conversation before deciding to <b>like</b> or <b>pass</b>{" "}
+        on other members.
       </Body>
       <Image src={tb2} displayType="mobile" />
 
-
-
-   
-
-
-
-
-
-      <SubTitle>The Pitch</SubTitle>
+      <SubTitle>How it works</SubTitle>
       <Body>
-        One of the biggest flaws of this game is the difficulty curve, like I
-        just mentioned before. Levels that were meant to be easy would take much
-        longer to solve than intended, and many times would turn into tedious
-        trial & error rather than actual problem solving.
+        When someone first joins the app they can immediately search for a date
+        after selecting their search criteria (gender, age-range, distance).
+        After starting a search, they are added to a date queue where we match
+        members on dates.
       </Body>
       <Body>
-        Besides that, there are just some relatively minor design flaws I see—
-        the biggest one for me being the counter for <i>turns left</i>. It's
-        just a bar at the top of the screen that decreases in size as you make
-        each move. I think at the time I felt that it looked better than a
-        number counter. I had no formal understanding of design. Now I value UX
-        much more than looks, and choosing something I felt looked better at the
-        expense of the user actually being able to know clearly how many moves
-        they have left was a mistake.
+        Once a date is found, both members are notified and the clock starts.
+        When they open up the date, there is a messenger as well as a profile
+        page. Both members can message each other freely for the 24 hour time
+        frame as well as view each others' profile.
       </Body>
       <Body>
-        And then the '<i>story line</i>'... just doesn't make sense. It's based
-        in some dystopian society where you, the player, are being instructed to
-        perform some seemingly painful brain operation on the deviant character,
-        Jimmy, in order to <i>simplify</i> him. It's a huge reach that I
-        justified with the very convenient phrase: '<i>It's abstract.</i>'
-        Really this was just a desperate attempt to make the weird text shooting
-        out of the puzzle make sense. It didn't work too well, but it is what it
-        is.
+        After 24 hours pass by, two things happen. First— the chat locks up.
+        Neither member can message each other at this point, but they can still
+        view the conversation they had as well as each others' profile. Second—
+        both members are given the opportunity to <b>like</b> or <b>pass</b> on
+        each other.
       </Body>
-      <SubTitle>The Pitch</SubTitle>
+      <Image src={tb1} displayType="mobile" />
       <Body>
-        Ahh
+        The date will disappear after making a decision. If both members like
+        each other, the date will re-appear as a permanent match.
+      </Body>
+      <Body>Members can go on multiple dates at once.</Body>
+      <Body>
+        Over time we maintain a score on members' engagement with one another
+        and match more engaged members together on dates.
+      </Body>
+      <SubTitle>Value Proposition</SubTitle>
+      <Body>
+        Our mission statement is based on one core philosophy: that more
+        conversations on dating apps lead to more in-person dates. And so, our
+        mission is <b>to bring more quality conversations to our members</b>.
+      </Body>
+      <Body>
+        In our pitch we reference{" "}
+        <InlineLink
+          type="external"
+          href="https://arxiv.org/ftp/arxiv/papers/1607/1607.03320.pdf"
+        >
+          this study
+        </InlineLink>{" "}
+        which brings to light how short most conversations in today's most
+        popular dating app,{" "}
+        <InlineLink type="external" href="https://tinder.com">
+          Tinder
+        </InlineLink>
+        , really are. The study only counts matches where at least one message
+        was sent. According to the study,{" "}
+        <b>only 50% of conversations contain more than two messages</b>. Another
+        sizable chunk of these conversations are only 3-5 messages long. This
+        poses a problem because the reality of the situation is that most of
+        these conversations that die early don't lead to anything but someone's
+        time being wasted.
+      </Body>
+      <Body>But why is this happening?</Body>
+      <Body>
+        Because apps like Tinder, Bumble, Hinge, etc. are all{" "}
+        <b>swipe focused</b>. A large majority of tinder members' time is spent
+        swiping, not chatting.
+      </Body>
+      <Body>
+        This is where Table shines. From the ground up, Table is designed around
+        encouraging and enabling quality conversations. If somebody isn't
+        engaging in conversation, there isn't much for them to do on our app.
+        This fact, along with our member engagement score mentioned earlier,
+        allows us to effectively cultivate a community of engaged members.
       </Body>
     </Container>
   );
