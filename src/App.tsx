@@ -13,7 +13,7 @@ import { GameChanger } from "./Views/Game Changer/Game Changer";
 
 import { TableDate } from "./Views/Table Date/Table Date";
 import { MBMS } from "./Views/MBMS";
-//import { DiverNow } from "./Views/Diver Now/Diver Now";
+import { DiverNow } from "./Views/Diver Now/Diver Now";
 import { PAJoe } from "./Views/PA Joe";
 
 import { Contact } from "./Views/Contact";
@@ -47,7 +47,7 @@ export default function App() {
               <Route exact path="/game-changer" component={GameChanger}></Route>
               <Route exact path="/table" component={TableDate}></Route>
               <Route exact path="/mbms" component={MBMS}></Route>
-              {/*<Route exact path="/diver-now" component={DiverNow}></Route>*/}
+              <Route exact path="/diver-now" component={DiverNow}></Route>
               <Route exact path="/pa-joe" component={PAJoe}></Route>
               <Route exact path="/contact" component={Contact}></Route>
               <Route exact path="/podcast" component={Podcast}></Route>
