@@ -8,7 +8,6 @@ import {
   faGitlab,
   faLinkedinIn,
   faTwitter,
-  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
 export const Footer: React.FunctionComponent = () => {
@@ -21,10 +20,6 @@ export const Footer: React.FunctionComponent = () => {
         link="https://www.linkedin.com/in/chetterich/"
       />
       <FooterLink i={faTwitter} link="https://twitter.com/_chetter" />
-      <FooterLink
-        i={faInstagram}
-        link="https://www.instagram.com/charleshetterich/"
-      />
     </Container>
   );
 };

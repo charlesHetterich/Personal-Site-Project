@@ -43,7 +43,7 @@ export function Home() {
         title="Previous Jobs"
         color="#f58b45"
         content={[
-          { text: "Table", link: "/table-date" },
+          { text: "Table", link: "/table" },
           { text: "MBMS", link: "/mbms" },
           { text: "Diver Now", link: "/diver-now", flags: ["inactive"] },
           { text: "PA Joe", link: "/pa-joe" },

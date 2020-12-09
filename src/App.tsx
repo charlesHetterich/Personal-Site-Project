@@ -45,7 +45,7 @@ export default function App() {
                 component={BackyardBlitz}
               ></Route>
               <Route exact path="/game-changer" component={GameChanger}></Route>
-              <Route exact path="/table-date" component={TableDate}></Route>
+              <Route exact path="/table" component={TableDate}></Route>
               <Route exact path="/mbms" component={MBMS}></Route>
               {/*<Route exact path="/diver-now" component={DiverNow}></Route>*/}
               <Route exact path="/pa-joe" component={PAJoe}></Route>
