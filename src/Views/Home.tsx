@@ -6,7 +6,12 @@ import {
   Emoji,
   Title as _title,
   Body as _body,
+  CustomArticleComponents,
 } from "../Util/Components";
+
+const { InlineLink } = CustomArticleComponents({
+  inlineColor: "#8763ff",
+});
 
 export function Home() {
   return (
@@ -22,8 +27,12 @@ export function Home() {
         enjoy your stay.
       </Body>
       <Body>
-        I am a Designer & Software Developer. Currently I spend my time working
-        freelance jobs, as well as on my own business ventures.
+        I am a Designer & Software Engineer. Currently I work as a Software
+        Engineer on the{" "}
+        <InlineLink href="https://www.esource.com/data-science" type="external">
+          E Source Data Science Team
+        </InlineLink>
+        , as well as on my own personal projects.
       </Body>
       <Body>
         Without further ado, here are some things! From me, to you
