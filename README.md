@@ -1,3 +1,3 @@
 # Personal-Site-Project
 
-the site can be found at https://charleshetterich.github.io
+The site can be found at https://chetterich.com
