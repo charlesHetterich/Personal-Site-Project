@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c581aba7.chunk.css",
-    "main.js": "/static/js/main.3b62e748.chunk.js",
-    "main.js.map": "/static/js/main.3b62e748.chunk.js.map",
+    "main.css": "/static/css/main.adc0bfca.chunk.css",
+    "main.js": "/static/js/main.131f3386.chunk.js",
+    "main.js.map": "/static/js/main.131f3386.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b4c216f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.b4c216f6.js.map",
     "static/js/2.11078909.chunk.js": "/static/js/2.11078909.chunk.js",
     "static/js/2.11078909.chunk.js.map": "/static/js/2.11078909.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.b6b84f227c3213e0d88d1e36d58234ef.js": "/precache-manifest.b6b84f227c3213e0d88d1e36d58234ef.js",
+    "precache-manifest.800634072f7109da74cbcb415f96bdda.js": "/precache-manifest.800634072f7109da74cbcb415f96bdda.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c581aba7.chunk.css.map": "/static/css/main.c581aba7.chunk.css.map",
+    "static/css/main.adc0bfca.chunk.css.map": "/static/css/main.adc0bfca.chunk.css.map",
     "static/js/2.11078909.chunk.js.LICENSE.txt": "/static/js/2.11078909.chunk.js.LICENSE.txt",
     "static/media/Backyard Blitz [Mac].zip": "/static/media/Backyard Blitz [Mac].52476bd4.zip",
     "static/media/Backyard Blitz [Windows].zip": "/static/media/Backyard Blitz [Windows].4530c722.zip",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.b4c216f6.js",
     "static/js/2.11078909.chunk.js",
-    "static/css/main.c581aba7.chunk.css",
-    "static/js/main.3b62e748.chunk.js"
+    "static/css/main.adc0bfca.chunk.css",
+    "static/js/main.131f3386.chunk.js"
   ]
 }
