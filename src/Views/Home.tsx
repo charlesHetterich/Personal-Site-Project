@@ -21,10 +21,11 @@ export function Home() {
         A conglomeration of things he has done, created, or thought
       </SubTitle>
       <Body>
-        Hello <Emoji symbol="👋" />— I maintain this website in order to provide
-        a better context of who I am as a professional & as a person. I also use
-        this site as a corner of the web to personalize & call my own! Hope you
-        enjoy your stay.
+        Hello <Emoji symbol="👋" />— I maintain this website{" "}
+        <Whisper>*occasionally*</Whisper> in order to provide a better context
+        of who I am as a professional & as a person. I also use this site as a
+        corner of the web to personalize & call my own! Hope you enjoy your
+        stay.
       </Body>
       <Body>
         I am a Designer & Software Engineer. Currently I work as a Software
@@ -126,3 +127,11 @@ const Body = withStyles((theme) => ({
     },
   },
 }))(_body);
+const Whisper = withStyles((theme) => ({
+  root: {
+    fontSize: ".8em",
+    opacity: 0.9,
+    display: "inline",
+    fontStyle: "italic",
+  },
+}))(Body);
