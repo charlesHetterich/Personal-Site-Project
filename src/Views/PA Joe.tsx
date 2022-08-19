@@ -6,7 +6,16 @@ import { Body, Header } from "../Util/Components";
 export const PAJoe: React.FunctionComponent = () => {
   return (
     <Container>
-      <Header title="PA Joe" links={[]} color="#ff6463" />
+      <Header
+        title="PA Joe"
+        links={[
+          {
+            text: "Website",
+            href: "https://pajoe.com/",
+          },
+        ]}
+        color="#ff6463"
+      />
       <Body>
         PA Joe is a Public Adjusting company I am actively freelancing for. The
         job has consisted of rebuilding their marketing site, creating from
