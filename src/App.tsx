@@ -11,6 +11,8 @@ import { PencilTheGame } from "./Views/Pencil The Game/Pencil The Game";
 import { BackyardBlitz } from "./Views/Backyard Blitz/Backyard Blitz";
 import { GameChanger } from "./Views/Game Changer/Game Changer";
 
+import { DellMedical } from "./Views/Dell Medical/Dell Medical";
+import { ESource } from "./Views/E Source/E Source";
 import { TableDate } from "./Views/Table Date/Table Date";
 import { MBMS } from "./Views/MBMS";
 import { DiverNow } from "./Views/Diver Now/Diver Now";
@@ -45,6 +47,8 @@ export default function App() {
                 component={BackyardBlitz}
               ></Route>
               <Route exact path="/game-changer" component={GameChanger}></Route>
+              <Route exact path="/dell-medical" component={DellMedical}></Route>
+              <Route exact path="/esource" component={ESource}></Route>
               <Route exact path="/table" component={TableDate}></Route>
               <Route exact path="/mbms" component={MBMS}></Route>
               <Route exact path="/diver-now" component={DiverNow}></Route>

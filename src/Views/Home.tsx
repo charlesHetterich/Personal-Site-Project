@@ -1,11 +1,13 @@
 import React from "react";
-import { withStyles, Box, Typography } from "@material-ui/core";
+import { withStyles, Box } from "@material-ui/core";
 
 import {
   MainLinkSection,
   Emoji,
   Title as _title,
-  Body as _body,
+  Body,
+  Whisper,
+  SubTitle as _subTitle,
   CustomArticleComponents,
 } from "../Util/Components";
 
@@ -22,18 +24,18 @@ export function Home() {
       </SubTitle>
       <Body>
         Hello <Emoji symbol="👋" />— I maintain this website{" "}
-        <Whisper>*occasionally*</Whisper> in order to provide a better context
-        of who I am as a professional & as a person. I also use this site as a
+        <Whisper>occasionally</Whisper> in order to provide a better context of
+        who I am as a professional & as a person. I also use this site as a
         corner of the web to personalize & call my own! Hope you enjoy your
         stay.
       </Body>
       <Body>
-        I am a Designer & Software Engineer. Currently I work as a Software
-        Engineer on the{" "}
-        <InlineLink href="https://www.esource.com/data-science" type="external">
-          E Source Data Science Team
+        I am a Designer & Software Engineer. Currently I am working toward my
+        masters degree in data science at the{" "}
+        <InlineLink href="https://ms-datascience.utexas.edu/" type="external">
+          University of Austin at Texas
         </InlineLink>
-        , as well as on my own personal projects.
+        . Always working on some art/projects as well <Emoji symbol="🙂" />.
       </Body>
       <Body>
         Without further ado, here are some things! From me, to you
@@ -53,10 +55,12 @@ export function Home() {
         title="Previous Jobs"
         color="#f58b45"
         content={[
+          { text: "Dell Medical", link: "/dell-medical" },
+          { text: "E Source", link: "/esource" },
           { text: "Table", link: "/table" },
-          { text: "MBMS", link: "/mbms" },
-          { text: "Diver Now", link: "/diver-now" },
           { text: "PA Joe", link: "/pa-joe" },
+          { text: "Diver Now", link: "/diver-now" },
+          { text: "MBMS", link: "/mbms" },
         ]}
       />
       <MainLinkSection
@@ -118,20 +122,4 @@ const SubTitle = withStyles((theme) => ({
       marginBottom: 40,
     },
   },
-}))(Typography);
-const Body = withStyles((theme) => ({
-  root: {
-    marginBottom: 40,
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: 25,
-    },
-  },
-}))(_body);
-const Whisper = withStyles((theme) => ({
-  root: {
-    fontSize: ".8em",
-    opacity: 0.9,
-    display: "inline",
-    fontStyle: "italic",
-  },
-}))(Body);
+}))(_subTitle);
