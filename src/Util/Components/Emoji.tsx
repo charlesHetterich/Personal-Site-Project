@@ -8,6 +8,7 @@ export const Emoji: React.FunctionComponent<{
     role="img"
     aria-label={label ? label : ""}
     aria-hidden={label ? "false" : "true"}
+    style={{ fontStyle: "normal" }}
   >
     {symbol}
   </span>

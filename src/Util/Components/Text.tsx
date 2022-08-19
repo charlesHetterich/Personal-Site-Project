@@ -3,6 +3,7 @@
 
 import React from "react";
 import { withStyles, Typography } from "@material-ui/core";
+import { VariantType } from "../Types";
 
 const _title = withStyles((theme) => ({
   root: {},
@@ -27,10 +28,11 @@ const _subTitle = withStyles((theme) => ({
   },
 }))(Typography);
 export const SubTitle: React.FunctionComponent<{
+  variant?: VariantType;
   classes?: { root: string };
-}> = ({ classes, children }) => {
+}> = ({ variant = "h2", classes, children }) => {
   return (
-    <_subTitle className={classes?.root} variant="h2">
+    <_subTitle className={classes?.root} variant={variant}>
       {children}
     </_subTitle>
   );
@@ -50,3 +52,12 @@ export const Body: React.FunctionComponent<{ classes?: { root: string } }> = ({
 }) => {
   return <_body className={classes?.root}>{children}</_body>;
 };
+
+export const Whisper = withStyles((theme) => ({
+  root: {
+    fontSize: ".8em",
+    opacity: 0.9,
+    display: "inline",
+    fontStyle: "italic",
+  },
+}))(Body);
