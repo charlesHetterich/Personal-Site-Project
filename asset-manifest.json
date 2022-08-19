@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.adc0bfca.chunk.css",
-    "main.js": "/static/js/main.130efa86.chunk.js",
-    "main.js.map": "/static/js/main.130efa86.chunk.js.map",
+    "main.js": "/static/js/main.5975d9b9.chunk.js",
+    "main.js.map": "/static/js/main.5975d9b9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b4c216f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.b4c216f6.js.map",
-    "static/js/2.11078909.chunk.js": "/static/js/2.11078909.chunk.js",
-    "static/js/2.11078909.chunk.js.map": "/static/js/2.11078909.chunk.js.map",
+    "static/js/2.c6cb0346.chunk.js": "/static/js/2.c6cb0346.chunk.js",
+    "static/js/2.c6cb0346.chunk.js.map": "/static/js/2.c6cb0346.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f6b85eb8ac08af1ec7a3bab4bbc7230b.js": "/precache-manifest.f6b85eb8ac08af1ec7a3bab4bbc7230b.js",
+    "precache-manifest.8440c670d4b3598c1ca401ed14158b86.js": "/precache-manifest.8440c670d4b3598c1ca401ed14158b86.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.adc0bfca.chunk.css.map": "/static/css/main.adc0bfca.chunk.css.map",
-    "static/js/2.11078909.chunk.js.LICENSE.txt": "/static/js/2.11078909.chunk.js.LICENSE.txt",
+    "static/js/2.c6cb0346.chunk.js.LICENSE.txt": "/static/js/2.c6cb0346.chunk.js.LICENSE.txt",
     "static/media/Backyard Blitz [Mac].zip": "/static/media/Backyard Blitz [Mac].52476bd4.zip",
     "static/media/Backyard Blitz [Windows].zip": "/static/media/Backyard Blitz [Windows].4530c722.zip",
     "static/media/Panasci Round 2 Pitch Deck.pdf": "/static/media/Panasci Round 2 Pitch Deck.4d912e47.pdf",
@@ -30,8 +30,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b4c216f6.js",
-    "static/js/2.11078909.chunk.js",
+    "static/js/2.c6cb0346.chunk.js",
     "static/css/main.adc0bfca.chunk.css",
-    "static/js/main.130efa86.chunk.js"
+    "static/js/main.5975d9b9.chunk.js"
   ]
 }
