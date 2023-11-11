@@ -95,7 +95,7 @@ export function Home() {
           },
           {
             text: "Resume",
-            link: require("../Assets/Resume_05_2023.pdf"),
+            link: require("../Assets/resume_11_2023.pdf"),
             linkType: "external",
           },
         ]}
