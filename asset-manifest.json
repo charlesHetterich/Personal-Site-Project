@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.adc0bfca.chunk.css",
-    "main.js": "/static/js/main.8b7da80b.chunk.js",
-    "main.js.map": "/static/js/main.8b7da80b.chunk.js.map",
+    "main.js": "/static/js/main.2460a76d.chunk.js",
+    "main.js.map": "/static/js/main.2460a76d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b4c216f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.b4c216f6.js.map",
-    "static/js/2.264e5b6e.chunk.js": "/static/js/2.264e5b6e.chunk.js",
-    "static/js/2.264e5b6e.chunk.js.map": "/static/js/2.264e5b6e.chunk.js.map",
+    "static/js/2.506e5799.chunk.js": "/static/js/2.506e5799.chunk.js",
+    "static/js/2.506e5799.chunk.js.map": "/static/js/2.506e5799.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e31a7a91dcf5e2fcedd4312835686b31.js": "/precache-manifest.e31a7a91dcf5e2fcedd4312835686b31.js",
+    "precache-manifest.1f6ecc955aeb648bb3cba7eaef3c95c0.js": "/precache-manifest.1f6ecc955aeb648bb3cba7eaef3c95c0.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.adc0bfca.chunk.css.map": "/static/css/main.adc0bfca.chunk.css.map",
-    "static/js/2.264e5b6e.chunk.js.LICENSE.txt": "/static/js/2.264e5b6e.chunk.js.LICENSE.txt",
+    "static/js/2.506e5799.chunk.js.LICENSE.txt": "/static/js/2.506e5799.chunk.js.LICENSE.txt",
     "static/media/Backyard Blitz [Mac].zip": "/static/media/Backyard Blitz [Mac].52476bd4.zip",
     "static/media/Backyard Blitz [Windows].zip": "/static/media/Backyard Blitz [Windows].4530c722.zip",
     "static/media/Panasci Round 2 Pitch Deck.pdf": "/static/media/Panasci Round 2 Pitch Deck.4d912e47.pdf",
@@ -21,6 +21,8 @@
     "static/media/dn1.gif": "/static/media/dn1.b7edf008.gif",
     "static/media/executive summary.pdf": "/static/media/executive summary.20bf4cb7.pdf",
     "static/media/gc1.png": "/static/media/gc1.9dce3f66.png",
+    "static/media/me.jpeg": "/static/media/me.aac0fe10.jpeg",
+    "static/media/pajoe1.webp": "/static/media/pajoe1.eacc1b0d.webp",
     "static/media/pencil1.gif": "/static/media/pencil1.da84221b.gif",
     "static/media/resume_11_2023.pdf": "/static/media/resume_11_2023.42d5df6d.pdf",
     "static/media/soma1.gif": "/static/media/soma1.13e64921.gif",
@@ -30,8 +32,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b4c216f6.js",
-    "static/js/2.264e5b6e.chunk.js",
+    "static/js/2.506e5799.chunk.js",
     "static/css/main.adc0bfca.chunk.css",
-    "static/js/main.8b7da80b.chunk.js"
+    "static/js/main.2460a76d.chunk.js"
   ]
 }
