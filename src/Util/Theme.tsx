@@ -5,7 +5,7 @@ const theme = createMuiTheme({
   palette: {
     type: "light",
     background: {
-      default: "#ffffff",
+      default: "#FFFCFB",
     },
     primary: {
       main: "#343436",
@@ -27,55 +27,55 @@ const theme = createMuiTheme({
 theme.typography.h1 = {
   fontFamily: "'Roboto', sans-serif;",
   fontWeight: 900,
-  fontSize: 80,
+  fontSize: 40,
   color: "#333333",
   lineHeight: 1,
   [theme.breakpoints.down("sm")]: {
-    fontSize: 60,
+    fontSize: 30,
   },
   [theme.breakpoints.down(550)]: {
-    fontSize: 50,
+    fontSize: 30,
   },
   [theme.breakpoints.down(450)]: {
-    fontSize: 40,
+    fontSize: 25,
   },
   [theme.breakpoints.down(360)]: {
-    fontSize: 35,
+    fontSize: 25,
   },
 };
 theme.typography.h2 = {
   fontWeight: 700,
-  fontSize: 35,
+  fontSize: 20,
   color: "#333333",
   [theme.breakpoints.down("sm")]: {
-    fontSize: 27,
+    fontSize: 15,
   },
   [theme.breakpoints.down(450)]: {
-    fontSize: 20,
+    fontSize: 15,
   },
 };
 theme.typography.h3 = {
   fontWeight: 500,
-  fontSize: 25,
+  fontSize: 15,
   fontStyle: "italic",
   color: "#808080",
   [theme.breakpoints.down("sm")]: {
-    fontSize: 20,
+    fontSize: 12,
   },
   [theme.breakpoints.down(450)]: {
-    fontSize: 15,
+    fontSize: 12,
   },
 };
 theme.typography.body1 = {
   fontWeight: 500,
-  fontSize: 25,
-  color: "#333333",
+  fontSize: 15,
+  color: "#333333dd",
   lineHeight: 1.75,
   [theme.breakpoints.down("sm")]: {
-    fontSize: 20,
+    fontSize: 12,
   },
   [theme.breakpoints.down(450)]: {
-    fontSize: 15,
+    fontSize: 12,
   },
 };
 

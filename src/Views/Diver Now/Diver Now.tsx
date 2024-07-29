@@ -11,13 +11,8 @@ export const DiverNow: React.FunctionComponent = () => {
         title="Diver Now"
         links={[
           {
-            text: "App Store",
-            href: "https://apps.apple.com/us/app/diver-now-app/id1526710183",
-          },
-          {
-            text: "Google Play",
-            href:
-              "https://play.google.com/store/apps/details?id=com.DiverNow.DiverNowApp",
+            text: "Website",
+            href: "https://www.divernowapp.com/",
           },
           {
             text: "Instagram",
@@ -27,13 +22,16 @@ export const DiverNow: React.FunctionComponent = () => {
         color="#ff6463"
       />
       <Body>
-        Diver Now is an app that I am the freelance iOS & backend developer for.
+        Diver Now is an app that I was the freelance iOS & backend developer for. 
+        Our client, Peter, wanted us to deliver the MVP
+        of a social media app for scuba divers. Members can make posts anywhere on the
+        world map so that other members can see pictures from their dive and
+        then know exactly where to go if they want a similar experience!
       </Body>
       <Image src={gif1} displayType="mobile" />
       <Body>
-        The app is a social media for scuba divers. Members can make posts on a
-        world map so that other members can see pictures from their dive and
-        then know exactly where to go if they want a similar dive!
+        The app was developed natively in Swift, and the backend leverages AWS services
+        like S3 and EC2.
       </Body>
     </Container>
   );

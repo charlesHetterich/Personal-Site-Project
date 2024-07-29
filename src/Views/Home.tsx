@@ -9,61 +9,85 @@ import {
   Whisper,
   SubTitle as _subTitle,
   CustomArticleComponents,
+  Image,
+  MediaScroller
 } from "../Util/Components";
+
+import my_photo from "../Assets/me.jpeg";
+import media1 from "../Assets/me.jpeg";
+import media2 from "../Assets/me.jpeg";
+import media3 from "../Assets/me.jpeg";
+
+
 
 const { InlineLink } = CustomArticleComponents({
   inlineColor: "#8763ff",
 });
 
 export function Home() {
+  const mediaItems = [
+    { src: media1, url: "https://example.com/1" },
+    { src: media2, url: "https://example.com/2" },
+    { src: media3, url: "https://example.com/3" },
+    { src: media3, url: "https://example.com/3" },
+    { src: media3, url: "https://example.com/3" },
+    { src: media3, url: "https://example.com/3" },
+    { src: media3, url: "https://example.com/3" },
+  ];
+
   return (
     <Container>
-      <Header>Charles Hetterich</Header>
-      <SubTitle variant="h3">
-        A conglomeration of things he has done, created, or thought
-      </SubTitle>
-      <Body>
-        Hello <Emoji symbol="👋" />— I maintain this website{" "}
-        <Whisper>occasionally</Whisper> in order to provide a better context of
-        who I am as a professional & as a person. I also use this site as a
-        corner of the web to personalize & call my own! Hope you enjoy your
-        stay.
-      </Body>
-      <Body>
-        I am a Designer & Software Engineer. Currently I am working toward my
-        masters degree in data science at the{" "}
-        <InlineLink href="https://ms-datascience.utexas.edu/" type="external">
-          University of Austin at Texas
-        </InlineLink>
-        . Always working on some art/projects as well <Emoji symbol="🙂" />.
-      </Body>
-      <Body>
-        Without further ado, here are some things! From me, to you
-        <Emoji symbol="👇" />
-      </Body>
+      <Profile>
+        <Image 
+          src={my_photo}
+          displayType="regular"
+          // outerStyle={{ borderRadius: "50%", marginBottom: "20px",  }} // Example of overriding OuterContainer styles
+          outerStyle={{ alignItems: "normal" }} // Example of overriding OuterContainer styles
+          innerStyle={{ width: 200, borderRadius: 2, borderTopRightRadius: 30, overflow: 'hidden' }} // Example of overriding InnerContainer styles
+          />
+        <TextContent>
+          <Header>Charles Hetterich</Header>
+          {/* <SubTitle variant="h3">
+            A conglomeration of things he has done, created, or thought
+          </SubTitle> */}
+          <Body>
+            Hi! I'm Charles.
+            I recieved my Bachelors in Computer Science from the University at Buffalo, and my Masters in Data Science from UT Austin.
+            I enjoy entrepreneurship and designing novel solutions to problems I am passionate about.
+          </Body>
+          <Body>
+            Recently I have been most interested in artificial intelligence, as well as decentralized computing/governance platforms.
+          </Body>
+        </TextContent>
+      </Profile>
+      {/* <MediaScroller items={mediaItems} cornerRadius={10} height={150} /> */}
       <MainLinkSection
-        title="Programming Projects"
-        color="#8763ff"
-        content={[
-          { text: "SOMA", link: "/soma" },
-          { text: "Backyard Blitz", link: "/backyard-blitz" },
-          { text: "Pencil The Game", link: "/pencil-the-game" },
-          { text: "Game Changer", link: "/game-changer" },
-        ]}
-      />
-      <MainLinkSection
-        title="Previous Jobs"
+        title="Previous Work"
         color="#f58b45"
+        // color="#D66C42"
         content={[
-          { text: "Dell Medical", link: "/dell-medical" },
+          { text: "OCAI LTD", link: "/ocai-ltd" },
           { text: "E Source", link: "/esource" },
+          { text: "Teaching", link: "/teaching" },
           { text: "Table", link: "/table" },
+          { text: "Dell Medical", link: "/dell-medical" },
           { text: "PA Joe", link: "/pa-joe" },
           { text: "Diver Now", link: "/diver-now" },
           { text: "MBMS", link: "/mbms" },
         ]}
       />
       <MainLinkSection
+        title="Older Things"
+        color="#8763ff"
+        // color="#7153D5"
+        content={[
+          { text: "SOMA", link: "/soma" },
+          { text: "Pencil The Game", link: "/pencil-the-game" },
+          { text: "Game Changer", link: "/game-changer" },
+          { text: "Backyard Blitz", link: "/backyard-blitz" },
+        ]}
+      />
+      {/* <MainLinkSection
         title="Design Stuff"
         color="#ff6463"
         content={[
@@ -79,23 +103,24 @@ export function Home() {
           },
           { text: "App Design", link: "/app-design", flags: ["inactive"] },
         ]}
-      />
+      /> */}
       <MainLinkSection
-        title="Miscellaneous"
+        title=". . ."
         color="#00d688"
+        // color="#00AF6F"
         content={[
           { text: "Contact", link: "/contact" },
-          { text: "Music", link: "/music", flags: ["inactive"] },
-          { text: "Podcast", link: "/podcast" },
-          { text: "Recipes", link: "/recipes", flags: ["inactive"] },
-          {
-            text: "Travel Photos",
-            link: "/travel-photos",
-            flags: ["inactive"],
-          },
+          // { text: "Music", link: "/music", flags: ["inactive"] },
+          // { text: "Podcast", link: "/podcast" },
+          // { text: "Recipes", link: "/recipes", flags: ["inactive"] },
+          // {
+          //   text: "Travel Photos",
+          //   link: "/travel-photos",
+          //   flags: ["inactive"],
+          // },
           {
             text: "Resume",
-            link: require("../Assets/resume_11_2023.pdf"),
+            link: require("../Assets/resume_7_24.pdf"),
             linkType: "external",
           },
         ]}
@@ -103,21 +128,43 @@ export function Home() {
     </Container>
   );
 }
+
+const Profile = withStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    [theme.breakpoints.down(550)]: {
+      flexDirection: 'column',
+    },
+  },
+}))(Box);
+
+const TextContent = withStyles((theme) => ({
+  root: {
+    marginLeft: 20,
+  },
+}))(Box);
+
 const Container = withStyles((theme) => ({
   root: {},
 }))(Box);
 
 const Header = withStyles((theme) => ({
   root: {
-    marginBottom: 40,
+    marginBottom: 20,
     [theme.breakpoints.down("sm")]: {
       marginBottom: 25,
     },
   },
 }))(_title);
+
+
+
 const SubTitle = withStyles((theme) => ({
   root: {
-    marginBottom: 70,
+    marginBottom: 15,
     [theme.breakpoints.down("sm")]: {
       marginBottom: 40,
     },

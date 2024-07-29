@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { theme } from "./Util/Theme";
 
 import { Home } from "./Views/Home";
+import { NewHome } from "./Views/NewHome";
 
 import { Soma } from "./Views/Soma/Soma";
 import { PencilTheGame } from "./Views/Pencil The Game/Pencil The Game";
@@ -57,7 +58,7 @@ export default function App() {
               <Route exact path="/podcast" component={Podcast}></Route>
               <Route component={Lost404}></Route>
             </Switch>
-            <Footer />
+            {/* <Footer /> */}
           </InnerContainer>
         </OuterContainer>
       </ThemeProvider>
@@ -71,13 +72,14 @@ const OuterContainer = withStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    paddingBottom: 100,
   },
 }))(Box);
 
 const InnerContainer = withStyles((theme) => ({
   root: {
-    marginTop: 150,
-    width: 1000,
+    marginTop: 50,
+    width: 850,
     maxWidth: "100%",
     padding: 50,
     [theme.breakpoints.down("sm")]: {

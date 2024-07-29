@@ -26,14 +26,16 @@ const MobileContainer = withStyles((theme) => ({
 export const Image: React.FunctionComponent<{
   src: string;
   displayType?: "regular" | "mobile";
-}> = ({ src, displayType = "regular" }) => {
+  outerStyle?: React.CSSProperties; // Custom style for the OuterContainer
+  innerStyle?: React.CSSProperties; // Custom style for the InnerContainer
+}> = ({ src, displayType = "regular", outerStyle, innerStyle }) => {
   // Choose display type
   const InnerContainer =
     displayType === "regular" ? RegularContainer : MobileContainer;
 
   return (
-    <OuterContainer>
-      <InnerContainer>
+    <OuterContainer style={outerStyle}>
+      <InnerContainer style={innerStyle}>
         <img
           style={{ width: "100%", margin: 0, padding: 0, display: "block" }}
           src={src}

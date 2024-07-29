@@ -39,7 +39,7 @@ const FooterLink: React.FunctionComponent<{
 
 const Container = withStyles((theme) => ({
   root: {
-    marginTop: 200,
+    marginTop: 150,
     marginBottom: 25,
     [theme.breakpoints.down("sm")]: {
       marginTop: 100,

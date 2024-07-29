@@ -41,9 +41,9 @@ export const MainLinkSection: React.FunctionComponent<{
 
 const Container = withStyles((theme) => ({
   root: {
-    marginTop: 100,
+    marginTop: 40,
     [theme.breakpoints.down("sm")]: {
-      marginTop: 70,
+      marginTop: 20,
     },
   },
 }))(Box);

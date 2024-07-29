@@ -39,7 +39,7 @@ export const DellMedical: React.FunctionComponent = () => {
         wanted to find out how I could help.
       </Body>
       <Body>
-        I have been working with Dr. Fonzo in the development of the
+        Over the course of several months I helped Dr. Fonzo in the development of the
         department's pilot study. My job is to build the fMRI & EEG{" "}
         <InlineLink type="external" href="https://www.psychopy.org/">
           PsychoPy
@@ -47,7 +47,7 @@ export const DellMedical: React.FunctionComponent = () => {
         tasks.
       </Body>
       <Body>
-        I've really enjoyed the work so far, and it makes me happy to know I'm
+        I've really enjoyed the work, and it makes me happy to know I
         contributing toward something that means a great deal to me{" "}
         <Emoji symbol="🙂" />.
       </Body>
