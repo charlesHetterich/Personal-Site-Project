@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.adc0bfca.chunk.css",
-    "main.js": "/static/js/main.2460a76d.chunk.js",
-    "main.js.map": "/static/js/main.2460a76d.chunk.js.map",
+    "main.js": "/static/js/main.de315cf9.chunk.js",
+    "main.js.map": "/static/js/main.de315cf9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b4c216f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.b4c216f6.js.map",
-    "static/js/2.506e5799.chunk.js": "/static/js/2.506e5799.chunk.js",
-    "static/js/2.506e5799.chunk.js.map": "/static/js/2.506e5799.chunk.js.map",
+    "static/js/2.9e4790fb.chunk.js": "/static/js/2.9e4790fb.chunk.js",
+    "static/js/2.9e4790fb.chunk.js.map": "/static/js/2.9e4790fb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1f6ecc955aeb648bb3cba7eaef3c95c0.js": "/precache-manifest.1f6ecc955aeb648bb3cba7eaef3c95c0.js",
+    "precache-manifest.f3b58c22f9d3772d533b5bc105cb8c17.js": "/precache-manifest.f3b58c22f9d3772d533b5bc105cb8c17.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.adc0bfca.chunk.css.map": "/static/css/main.adc0bfca.chunk.css.map",
-    "static/js/2.506e5799.chunk.js.LICENSE.txt": "/static/js/2.506e5799.chunk.js.LICENSE.txt",
+    "static/js/2.9e4790fb.chunk.js.LICENSE.txt": "/static/js/2.9e4790fb.chunk.js.LICENSE.txt",
     "static/media/Backyard Blitz [Mac].zip": "/static/media/Backyard Blitz [Mac].52476bd4.zip",
     "static/media/Backyard Blitz [Windows].zip": "/static/media/Backyard Blitz [Windows].4530c722.zip",
     "static/media/Panasci Round 2 Pitch Deck.pdf": "/static/media/Panasci Round 2 Pitch Deck.4d912e47.pdf",
@@ -22,18 +22,24 @@
     "static/media/executive summary.pdf": "/static/media/executive summary.20bf4cb7.pdf",
     "static/media/gc1.png": "/static/media/gc1.9dce3f66.png",
     "static/media/me.jpeg": "/static/media/me.aac0fe10.jpeg",
+    "static/media/megaportraits_diagram.png": "/static/media/megaportraits_diagram.517c1672.png",
+    "static/media/multi_person.gif": "/static/media/multi_person.08889c6e.gif",
+    "static/media/new_dataset.gif": "/static/media/new_dataset.9499271a.gif",
     "static/media/pajoe1.webp": "/static/media/pajoe1.eacc1b0d.webp",
     "static/media/pencil1.gif": "/static/media/pencil1.da84221b.gif",
-    "static/media/resume_11_2023.pdf": "/static/media/resume_11_2023.42d5df6d.pdf",
+    "static/media/person_video_audio.gif": "/static/media/person_video_audio.e4f937cf.gif",
+    "static/media/resume_7_24.pdf": "/static/media/resume_7_24.7c8ec29a.pdf",
     "static/media/soma1.gif": "/static/media/soma1.13e64921.gif",
     "static/media/soma2.gif": "/static/media/soma2.60c88687.gif",
     "static/media/tb1.gif": "/static/media/tb1.a3d1404a.gif",
-    "static/media/tb2.gif": "/static/media/tb2.4d0c3d9c.gif"
+    "static/media/tb2.gif": "/static/media/tb2.4d0c3d9c.gif",
+    "static/media/training1val.jpg": "/static/media/training1val.e1c2058d.jpg",
+    "static/media/vasa1diagram.png": "/static/media/vasa1diagram.bdfe3917.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b4c216f6.js",
-    "static/js/2.506e5799.chunk.js",
+    "static/js/2.9e4790fb.chunk.js",
     "static/css/main.adc0bfca.chunk.css",
-    "static/js/main.2460a76d.chunk.js"
+    "static/js/main.de315cf9.chunk.js"
   ]
 }
