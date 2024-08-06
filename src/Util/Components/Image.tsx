@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, withStyles } from "@material-ui/core";
+import { Body } from "./Text";
 
 const RegularContainer = withStyles((theme) => ({
   root: {
@@ -26,9 +27,10 @@ const MobileContainer = withStyles((theme) => ({
 export const Image: React.FunctionComponent<{
   src: string;
   displayType?: "regular" | "mobile";
+  caption?: string;
   outerStyle?: React.CSSProperties; // Custom style for the OuterContainer
   innerStyle?: React.CSSProperties; // Custom style for the InnerContainer
-}> = ({ src, displayType = "regular", outerStyle, innerStyle }) => {
+}> = ({ src, displayType = "regular", caption, outerStyle, innerStyle }) => {
   // Choose display type
   const InnerContainer =
     displayType === "regular" ? RegularContainer : MobileContainer;
@@ -42,9 +44,19 @@ export const Image: React.FunctionComponent<{
           alt="loading..."
         />
       </InnerContainer>
+      {caption && <CaptionBody>{caption}</CaptionBody>}
     </OuterContainer>
   );
 };
+
+const CaptionBody = withStyles((theme) => ({
+  root: {
+    scale: 0.8,
+    opacity: 0.7,
+    fontStyle: "italic",
+    margin: 0,
+  },
+}))(Body);
 
 const OuterContainer = withStyles((theme) => ({
   root: {

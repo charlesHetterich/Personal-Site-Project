@@ -6,4 +6,4 @@ export * from "./Components/Image";
 export * from "./Components/Text";
 export * from "./Components/Header";
 export * from "./Components/ScrollToTop";
-export * from "./Components/MediaScroller";
+export * from "./Components/BulletList";
