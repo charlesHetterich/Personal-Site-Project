@@ -30,18 +30,35 @@ export const Image: React.FunctionComponent<{
   caption?: string;
   outerStyle?: React.CSSProperties; // Custom style for the OuterContainer
   innerStyle?: React.CSSProperties; // Custom style for the InnerContainer
-}> = ({ src, displayType = "regular", caption, outerStyle, innerStyle }) => {
+  scale?: number;
+  onMouseEnter?: React.MouseEventHandler<HTMLImageElement>; // Mouse enter event
+  onMouseLeave?: React.MouseEventHandler<HTMLImageElement>; // Mouse leave event
+}> = ({ src, displayType = "regular", caption, outerStyle, innerStyle, scale, onMouseEnter, onMouseLeave }) => {
   // Choose display type
   const InnerContainer =
     displayType === "regular" ? RegularContainer : MobileContainer;
+  const _scale = scale ?? 1;
 
   return (
     <OuterContainer style={outerStyle}>
       <InnerContainer style={innerStyle}>
         <img
-          style={{ width: "100%", margin: 0, padding: 0, display: "block" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            margin: 0,
+            padding: 0,
+            display: "block",
+            objectFit: "cover",
+            objectPosition: 'center center',
+            transform: `scale(${scale})`,  // Apply scaling
+            transformOrigin: 'center center',  // Transform from center
+            transition: 'transform 0.3s ease', // Smooth transition
+          }}
           src={src}
           alt="loading..."
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
         />
       </InnerContainer>
       {caption && <CaptionBody>{caption}</CaptionBody>}
