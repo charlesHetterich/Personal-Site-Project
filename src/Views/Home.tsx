@@ -88,7 +88,8 @@ export function Home() {
         color="#00d688"
         content={[
           { text: "Contact", link: "/contact" },
-          // { text: "Music", link: "/music", flags: ["inactive"] },
+          { text: "Github", link: "https://github.com/charlesHetterich", linkType: "external" },
+          { text: "Gitlab", link: "https://gitlab.com/cHetterich", linkType: "external" },
           // { text: "Podcast", link: "/podcast" },
           // { text: "Recipes", link: "/recipes", flags: ["inactive"] },
           // {
