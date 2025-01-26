@@ -99,7 +99,7 @@ export function Home() {
           // },
           {
             text: "Resume",
-            link: require("../Assets/charles_resume_8_24.pdf"),
+            link: require("../Assets/charles_resume_1_25.pdf"),
             linkType: "external",
           },
         ]}
