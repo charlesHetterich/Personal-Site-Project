@@ -1,0 +1,46 @@
+import { Header, Image } from "@chetterich/ui"
+import tb1 from "../assets/tb1.gif"
+import tb2 from "../assets/tb2.gif"
+import execSummary from "../assets/executive-summary.pdf"
+import pitchDeck from "../assets/panasci-pitch-deck.pdf"
+
+<Header
+  title="Table"
+  links={[
+    { text: "Executive Summary", href: execSummary },
+    { text: "Pitch Deck", href: pitchDeck },
+  ]}
+  color="#ff6463"
+/>
+
+Table is a dating app where members go on 24 hour texting dates where they can have conversation before deciding to **like** or **pass** on other members.
+
+<Image src={tb2} displayType="mobile" />
+
+## How it works
+
+When someone first joins the app they can immediately search for a date after selecting their search criteria (gender, age-range, distance). After starting a search, they are added to a date queue where we match members on dates.
+
+Once a date is found, both members are notified and the clock starts. When they open up the date, there is a messenger as well as a profile page. Both members can message each other freely for the 24 hour time frame as well as view each others' profile.
+
+After 24 hours pass by, two things happen. First— the chat locks up. Neither member can message each other at this point, but they can still view the conversation they had as well as each others' profile. Second— both members are given the opportunity to **like** or **pass** on each other.
+
+<Image src={tb1} displayType="mobile" />
+
+The date will disappear after making a decision. If both members like each other, the date will re-appear as a permanent match.
+
+Members can go on multiple dates at once.
+
+Over time we maintain a score on members' engagement with one another and match more engaged members together on dates.
+
+## Value Proposition
+
+Our mission statement is based on one core philosophy: that more conversations on dating apps lead to more in-person dates. And so, our mission is **to bring more quality conversations to our members**.
+
+In our pitch we reference [this study](https://arxiv.org/ftp/arxiv/papers/1607/1607.03320.pdf) which brings to light how short most conversations in today's most popular dating app, [Tinder](https://tinder.com), really are. The study only counts matches where at least one message was sent. According to the study, **only 50% of conversations contain more than two messages**. Another sizable chunk of these conversations are only 3-5 messages long. This poses a problem because the reality of the situation is that most of these conversations that die early don't lead to anything but someone's time being wasted.
+
+But why is this happening?
+
+Because apps like Tinder, Bumble, Hinge, etc. are all **swipe focused**. A large majority of tinder members' time is spent swiping, not chatting.
+
+This is where Table shines. From the ground up, Table is designed around encouraging and enabling quality conversations. If somebody isn't engaging in conversation, there isn't much for them to do on our app. This fact, along with our member engagement score mentioned earlier, allows us to effectively cultivate a community of engaged members.

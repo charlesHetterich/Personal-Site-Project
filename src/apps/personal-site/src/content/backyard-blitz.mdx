@@ -1,0 +1,22 @@
+import { Header, Image } from "@chetterich/ui"
+import gif1 from "../assets/backyardBlitz1.gif"
+import bbWindows from "../assets/backyard-blitz-windows.zip"
+import bbMac from "../assets/backyard-blitz-mac.zip"
+
+<Header
+  title="Backyard Blitz"
+  links={[
+    { text: "Repository", href: "https://github.com/charlesHetterich/backyard-blitz" },
+    { text: "Download (Windows)", href: bbWindows, linkType: "download", downloadName: "Backyard Blitz (Windows)" },
+    { text: "Download (Mac)", href: bbMac, linkType: "download", downloadName: "Backyard Blitz (Mac)" },
+  ]}
+  color="#ff6463"
+/>
+
+Backyard Blitz is a water gun fight shoot 'em up. Collect a new water gun in each new backyard you visit, and become the last kid standing in the neighborhood!
+
+<Image src={gif1} />
+
+I made this game with a few of my classmates in my Game Design course. It was the first game I've worked on with a bunch of other people. It was super cool being able to delegate tasks and watch as our separate components eventually came together to form an actual game!
+
+The project came out decently for the time frame we had. Obviously it could have been much more polished if we weren't limited on that front. The guns/enemies are super unbalanced and I think the artwork could use some fine tuning as well, but the core concept is pretty sound. The screen shake is a bit much, but we had discovered how easy it was to apply screen effects in [Unity](https://unity.com/) so... why not.

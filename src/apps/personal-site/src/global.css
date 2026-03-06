@@ -1,0 +1,88 @@
+:root {
+  --color-bg: #fffcfb;
+  --color-primary: #343436;
+  --color-text: #424245;
+  --color-text-secondary: #535357;
+  --color-text-body: #333333dd;
+  --color-heading: #333333;
+  --color-shadow: #333333ff;
+
+  --color-orange: #f58b45;
+  --color-purple: #8763ff;
+  --color-green: #00d688;
+  --color-red: #ff6463;
+
+  --font-heading: "Roboto", sans-serif;
+  --font-body: "Poppins", sans-serif;
+
+  --container-width: 850px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+}
+
+.inner-container {
+  margin-top: 50px;
+  width: var(--container-width);
+  max-width: 100%;
+  padding: 50px;
+}
+
+@media (max-width: 600px) {
+  .inner-container {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 450px) {
+  .inner-container {
+    margin-top: 50px;
+    padding: 20px;
+  }
+}
+
+.home-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.home-text-content {
+  margin-left: 20px;
+}
+
+.home-title {
+  margin-bottom: 20px;
+}
+
+.not-found-title {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 550px) {
+  .home-profile {
+    flex-direction: column;
+  }
+  .home-text-content {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-title {
+    margin-bottom: 25px;
+  }
+}

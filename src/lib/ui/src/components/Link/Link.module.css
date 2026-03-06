@@ -1,0 +1,42 @@
+.filled {
+  margin: 15px;
+  padding: 5px 10px;
+  display: inline-block;
+  box-shadow: 5px 5px var(--color-shadow);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.filled:hover {
+  box-shadow: 10px 10px var(--color-shadow);
+}
+
+.underlined {
+  font-weight: 800;
+  border-bottom: 3px solid;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.underlined:hover {
+  background-color: color-mix(in srgb, currentColor 20%, transparent);
+}
+
+.backButton {
+  margin-bottom: 120px;
+}
+
+@media (max-width: 600px) {
+  .filled {
+    margin: 10px;
+    font-size: 12px;
+  }
+  .backButton {
+    margin-bottom: 75px;
+  }
+}
