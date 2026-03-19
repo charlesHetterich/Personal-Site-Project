@@ -31,6 +31,13 @@
   margin-bottom: 120px;
 }
 
+.backButtonLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
 @media (max-width: 600px) {
   .filled {
     margin: 10px;

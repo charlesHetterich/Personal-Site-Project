@@ -67,7 +67,7 @@ export function CustomLink({
 export function BackButton({ color, className }: { color: string; className?: string }) {
   return (
     <div className={`${styles.backButton} ${className ?? ""}`}>
-      <CustomLink href="/" color={color} linkStyle="filled" linkType="internal">
+      <CustomLink href="/" color={color} linkStyle="filled" linkType="internal" className={styles.backButtonLink}>
         <ArrowLeft size={16} />
       </CustomLink>
     </div>

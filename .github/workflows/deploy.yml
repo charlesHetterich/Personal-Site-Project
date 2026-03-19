@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "0 6 * * 1" # Weekly Monday 6am UTC — refresh stats
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Fetch GitHub stats
+        env:
+          GH_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+        run: bash scripts/fetch-github-stats.sh
+
+      - run: pnpm build
+
+      - name: Deploy to GitHub Pages
+        working-directory: src/apps/personal-site
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          npx gh-pages -d dist --user "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
