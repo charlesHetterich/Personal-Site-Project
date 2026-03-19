@@ -120,6 +120,58 @@ body {
   margin-bottom: 8px;
 }
 
+.code-block {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  overflow-x: auto;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.code-block code {
+  background: none;
+  padding: 0;
+}
+
+code {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mdx-ol {
+  margin-left: 40px;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-text-body);
+  line-height: 1.75;
+}
+
+.mdx-ol > .mdx-li {
+  margin-bottom: 10px;
+}
+
+.mdx-ol > .mdx-li p {
+  margin-bottom: 0;
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  .mdx-ol {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+}
+
 .not-found-title {
   margin-bottom: 50px;
 }

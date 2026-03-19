@@ -192,6 +192,7 @@ export function Home() {
         title="Previous Work"
         color="#f58b45"
         content={[
+          { text: "CDM", link: "/cdm" },
           { text: "OCAI LTD", link: "/ocai-ltd" },
           { text: "E Source", link: "/esource" },
           { text: "Table", link: "/table" },

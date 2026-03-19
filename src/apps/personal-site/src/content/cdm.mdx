@@ -1,0 +1,263 @@
+import { Header, Image, SubTitle, Whisper, BulletList, BulletBody } from "@chetterich/ui"
+import installFreshGif from "../assets/cdm_install_fresh.gif"
+import deployGif from "../assets/cdm_deploy.gif"
+import depGraph from "../assets/cdm_dependency_graph.png"
+import webMock1 from "../assets/cdm_website_mock1.jpg"
+import webMock2 from "../assets/cdm_website_mock2.png"
+
+<Header
+  title="Contract Dependency Manager"
+  links={[
+    { text: "Repository", href: "https://github.com/paritytech/contract-dependency-manager" },
+    { text: "ContractHub", href: "https://contracthub.paseo.li" },
+  ]}
+  color="#ff6463"
+/>
+
+<Image src={installFreshGif} />
+
+I'd like to introduce a tool I've been working on, the [*Contract Dependency Manager*](https://github.com/paritytech/contract-dependency-manager) (**cdm**). The cdm system handles the *distribution layer* of Polkadot's smart contract tech-stack. It makes orchestrating the deployment of arbitrarily complex contract dependency graphs trivial.
+
+The interface is heavily inspired by [npm](https://www.npmjs.com/). Another *very* similar project in the blockchain space is the [Move Package Manager](https://docs.sui.io/guides/developer/packages/move-package-management).
+
+The key feature cdm offers is *automatically resolving addresses for cross contract calls*. When one contract makes a call to another, it has to know the other contract's on-chain address. Normally it is up to the developer to (1) determine the deployment order of contracts, (2) capture the address of previously deployed contracts, and pass these addresses in as arguments to contracts which depend on them.
+
+More friction is added when you want to use contracts deployed by another team or repository. That team has to publish their contracts' addresses somewhere for you to fetch into your own deployment process. If you want to locally test, you would have to fetch their contract and manually build/deploy it to your local network before deploying your own contracts.
+
+By leveraging rust macros/metadata, a CLI tool, and an on-chain contract registry, cdm automates away **all** of this friction.
+
+## Architecture
+
+cdm is integrated into 3 layers of the smart contract stack.
+
+### The Code
+
+In this example, `counter_writer` is marked as a contract registered on-chain as `@example/counter-writer`. In the `write_increment` function there is an example of making a call to a third party contract from an external crate `dapps`, owned by another organization.
+
+```rust
+use pvm_contract as pvm
+use dapps::{counter}
+
+#[pvm::contract(cdm = "@example/counter-writer")]
+mod counter_writer {
+    use super::*
+
+    #[pvm::constructor]
+    pub fn new() -> Result<(), Error> { Ok(()) }
+
+    #[pvm::method]
+    pub fn write_increment() {
+        let counter = counter::cdm_reference();
+        counter.increment().expect("increment failed");
+    }
+}
+```
+
+`cdm = "@example/counter-writer"` does three things at compile time:
+
+1. Embeds a `__PVM_CDM` symbol in the ELF binary containing `{"cdmPackage":"@example/counter-writer"}`. The build tooling extracts this into a `.cdm.json` file, which the CLI reads to know *what* to register on-chain.
+2. Bakes in the registry address via `option_env!("CONTRACTS_REGISTRY_ADDR")`. This is a compile-time constant-- the address of the on-chain ContractRegistry is embedded directly in the contract bytecode.
+3. Generates a `cdm_reference()` function that does a runtime cross-contract call to the ContractRegistry's `getAddress(string)`, passing the CDM name, and returns a typed `Reference` to the resolved contract.
+
+### CLI
+
+```txt
+Usage: cdm [command] [options]
+
+Options:
+  -n, --name <name>           connect to a well known environment
+                              (choices: local, paseo, polkadot)
+  --assethub-url <url>        assethub websocket
+  --bulletin-url  <url>       bulletin websocket
+  --registry-address <addr>   on-chain address of the registry contract
+  --bootstrap                 include missing external depended on contracts
+                              in build/deploy steps (for local development)
+  --suri <uri>                secret URI for deployment signing
+
+Commands:
+  install [contracts...]                Install contract dependencies
+  build [options]                       Build workspace contracts
+  deploy [options]                      Deploy and register workspace contracts
+  add papi <contract-name> [options]    Add cdm contract type descriptors to polkadot-api
+  add cargo <contract-name> [options]   Add a cdm contract crate to workspace cargo.toml
+```
+
+Both the `build` & `deploy` commands depend on rust's metadata to find all workspace contracts. `deploy` also uses this metadata to build a contract dependency graph, which is then used to sort contract deployment order.
+
+### On-Chain Registry
+
+The [on-chain registry](https://github.com/paritytech/contract-dependency-manager/blob/main/src/contract/src/lib.rs) establishes ownership over and maps human-readable contract names (like `@polkadot/reputation`) to deployed addresses. Similar to what [DotNS](https://github.com/paritytech/dotns) does for `.dot` domains.
+
+```rust
+pub fn publish_latest(contract_name: String, contract_address: Address, metadata_uri: String)
+pub fn get_address(contract_name: String) -> Address
+pub fn get_metadata_uri(contract_name: String) -> String
+pub fn get_owner(contract_name: String) -> Address
+pub fn get_version_count(contract_name: String) -> u32
+pub fn get_contract_count() -> u32
+```
+
+The `metadata_uri` field maps to bulletin storage-- a JSON or SCALE encoded blob of useful information about a contract.
+
+Contract names abide by a format like `"@org/<some-contract>"`, where an `org` name is owned by an address. Meaning, if OpenGov claimed the org name `@polkadot`, then OpenGov would own all contracts registered under the prefix `@polkadot`.
+
+## cdm install
+
+`cdm.json` is cdm's version of `package.json`. It is updated/generated when a user runs the `cdm install` command. For example:
+
+```
+cdm i -n paseo @parity/gigs @polkadot/disputes @polkadot/reputation
+```
+
+generates a `cdm.json`:
+
+```json
+{
+  "targets": {
+    "6ba4ef1fd1f838b8": {
+      "asset-hub": "wss://paseo.substrate.dev/asset-hub",
+      "bulletin": "https://ipfs.dotspark.app/ipfs",
+      "registry": "0x5801b439a678d9d3a68b8019da6a4abfa507de11"
+    }
+  },
+  "dependencies": {
+    "6ba4ef1fd1f838b8": {
+      "@parity/gigs": "latest",
+      "@polkadot/disputes": "latest",
+      "@polkadot/reputation": "latest"
+    }
+  }
+}
+```
+
+A contract dependency is given by two things: its *version* and its *target*. The *target* is the hash of *"where the contract came from"*. We track targets inside of the `cdm.json` so that contributors of a repository with a `cdm.json` can freshly install all contract dependencies to their own environment (what you see in the GIF at the top of this post)-- a standard expectation for package managers.
+
+In addition to generating `cdm.json`, metadata is saved to a central place on the user's machine:
+
+```
+~/.cdm/<target-hash>/contracts/@org/contract/name/<version>/
+    abi.json
+    info.json
+    metadata.json
+```
+
+The workspace level `cdm.json` acts as a *router* into the global `~/.cdm` to fetch relevant type information-- similar to a system like `pnpm`.
+
+## Using Imported Contracts
+
+After installing contract dependencies with `cdm install`, they can be used easily from either TypeScript or Rust. In both cases, all imported contracts are fully typed.
+
+### TypeScript
+
+Add the cdm typescript package: `npm i @dotdm/cdm`
+
+```ts
+import { createCdm } from "@dotdm/cdm";
+
+const cdm = createCdm({
+    defaultOrigin: "5Grw2ZtLh3m9n1sHj5e7uXoVh6v8z5Z4a9f1g2h3j4k5",
+    defaultSigner: signer,
+});
+
+const counter = cdm.getContract("@example/counter");
+const counterWriter = cdm.getContract("@example/counter-writer");
+const counterReader = cdm.getContract("@example/counter-reader");
+const gigs = cdm.getContract("@parity/gigs");
+
+await gigs.poke.tx(5n);
+const count = await gigs.getTaskCount.query();
+```
+
+### Rust
+
+Add the `Cargo.toml` dependency: `cdm = { git = "https://github.com/paritytech/contract-dependency-manager" }`
+
+```rust
+#![no_main]
+#![no_std]
+
+use pvm_contract as pvm;
+
+cdm::import!("@polkadot/disputes");
+cdm::import!("@parity/gigs");
+
+#[pvm::storage]
+struct Contracts {
+    disputes: disputes::Reference,
+    gigs: gigs::Reference
+}
+
+#[pvm::contract(cdm = "@org/contract/name")]
+mod some_contract {
+    use super::*;
+
+    #[pvm::constructor]
+    pub fn new() -> Result<(), Error> {
+        Contracts::disputes().set(&disputes::cdm_reference());
+        Contracts::gigs().set(&gigs::cdm_reference());
+        Ok(())
+    }
+
+    #[pvm::method]
+    pub fn foo() {
+        let dispute_contract = Contracts::disputes().get().unwrap();
+        let gigs_contract = Contracts::gigs().get().unwrap();
+
+        dispute_contract.escalate_dispute("dispute-id");
+        gigs_contract.poke(10);
+    }
+}
+```
+
+## Deployment
+
+<Image src={deployGif} />
+
+Deployments have a comprehensive TUI and are parallelized where possible. In the GIF above, there are 3 columns of links which correspond to the 3 on-chain steps:
+
+1. Publish the contract to Asset Hub
+2. Publish metadata to Bulletin
+3. Register contract in the registry
+
+The first & last links are Polkadot-JS links to the corresponding transaction, and the middle links to the corresponding bulletin metadata.
+
+Anyone can deploy a suite of many PVM contracts with a single command:
+
+```
+cdm deploy -n paseo
+```
+
+## Versions & Upgrades
+
+The current implementation takes a simple approach to version management. Upgrades are deployed as *new contracts* (at new addresses), instead of changing the contract code at the *same address*. This is to say it operates under an expectation of **contract permanence**.
+
+While this approach is not memory efficient (deploying a new contract for every change), the benefit is that we maintain full version history, and breaking features can be deployed without the worry of disrupting upstream contracts. This is in-line with the expected behavior of most package management systems (npm, cargo, pip, etc.)-- Sui's [packages are also immutable](https://docs.sui.io/guides/developer/packages/upgrade).
+
+<Image src={depGraph} caption="A partial dependency graph between four contracts over time as different versions are deployed." />
+
+In the graph you can see, for example, that all contracts were deployed when `v1` of `@polkadot/context` was latest, and stay depending on `v1` after `v2` was deployed. Meanwhile, `v1` & `v2` of `@polkadot/insurance` were deployed when `v2` of `@polkadot/disputes` was latest. After `v3` of `@polkadot/disputes` was deployed, `v3` of `@polkadot/insurance` was deployed depending on it.
+
+## ContractHub
+
+<Image src={webMock1} />
+
+<Image src={webMock2} />
+
+The on-chain registry enables a huge benefit: ***discoverability***. [ContractHub](https://contracthub.paseo.li) is a frontend where all data is real contract data published to the registry on Asset Hub & Bulletin. If you publish any contracts to the registry, you'll see them (and all their metadata) appear.
+
+The registry can be seeded with contracts ready for developers to experiment on top of. It's a vehicle for developers to easily share their own contracts with others to develop on top of-- curating a highly collaborative and interconnected environment.
+
+## Outcomes
+
+<BulletList content={[
+  <BulletBody>Contract addresses are always resolved on-chain. Developers no longer have to think about managing contract addresses which change across deployment environments.</BulletBody>,
+  <BulletBody>Anyone can deploy a suite of many PVM contracts with a single command.</BulletBody>,
+  <BulletBody>Anyone can make their contract's Readme, Repository, Rust types, TypeScript types, etc. <em>highly discoverable</em> with a single human readable string similar to npm package names.</BulletBody>,
+  <BulletBody>The culture around contract development shifts from monolithic structures to highly composable systems & components due to the ease of system interactions.</BulletBody>,
+]} />
+
+## Limitations
+
+The cdm system is built on top of [cargo-pvm-contract](https://github.com/paritytech/cargo-pvm-contract), which makes all cdm contracts written in Rust Solidity compatible by default-- including the registry contract. Solidity contracts published to the registry still gain the benefit of mapping a human readable string to TypeScript typegen.
+
+However, Solidity does not have the rich language features available in Rust (like macros), which are key for generating the metadata required for the end-to-end CLI experience to work.

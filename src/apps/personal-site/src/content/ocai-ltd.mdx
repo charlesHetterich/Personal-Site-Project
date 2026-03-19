@@ -102,11 +102,11 @@ The key is to *disentangle* the identity and motion (i.e. ensure no visual infor
 I put together my own implementation of this model. Frankly, I was cutting several corners at this point due to time constraints, knowing that each training run was going to take quite some time. In MegaPortraits there are feature matching losses used in conjunction with several pre-trained vision models to encode strong learning signals into the gradients. I did not prioritize these and I believe that was a mistake. I think these were essential and would contribute to faster convergence, allowing for more training attempts. The loss functions I used were:
 
 <BulletList content={[
-  <BulletBody>**Reconstruction loss** between the model output and target frame</BulletBody>,
-  <BulletBody>**GAN hinge loss**, with the discriminator trained to distinguish between the model output and target frame</BulletBody>,
-  <BulletBody>**Feature matching loss** between the intermediate layer features of the discriminator on the model output and target frame</BulletBody>,
-  <BulletBody>Positive deep **cosine similarity loss** between the reference encodings of the identity and motion frames</BulletBody>,
-  <BulletBody>Negative deep **cosine similarity loss** between the identity encodings of the reference frame and an alternate identity</BulletBody>,
+  <BulletBody><strong>Reconstruction loss</strong> between the model output and target frame</BulletBody>,
+  <BulletBody><strong>GAN hinge loss</strong>, with the discriminator trained to distinguish between the model output and target frame</BulletBody>,
+  <BulletBody><strong>Feature matching loss</strong> between the intermediate layer features of the discriminator on the model output and target frame</BulletBody>,
+  <BulletBody>Positive deep <strong>cosine similarity loss</strong> between the reference encodings of the identity and motion frames</BulletBody>,
+  <BulletBody>Negative deep <strong>cosine similarity loss</strong> between the identity encodings of the reference frame and an alternate identity</BulletBody>,
 ]} />
 
 Something was off, which I was unable to resolve it in the bit of time remaining. The training outputs I was getting were noisy, and it seemed that it was combining the background from the reference frame with the identity of the motion frame. There are a number of things that may have been cause for issue. Many of my hyperparameter selections were arbitrary at best. There was a lot of noise in some of the samples (ex: see the highly complex background in the sample with Ashton Kutcher above, with a crowd of people making motion in the background). And as mentioned earlier, I did not have the loss functions on pre-trained vision model features that MegaPortraits had.
