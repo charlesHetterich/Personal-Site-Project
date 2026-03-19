@@ -52,9 +52,8 @@ pnpm build            # Build UI lib (type-check) then app (Vite)
 pnpm dev              # Start Vite dev server
 pnpm format           # Run Biome formatter
 pnpm clean            # Remove dist directories
+pnpm run deploy       # Build & deploy to GitHub Pages (gh-pages -d dist)
 ```
-
-Deploy: `cd src/apps/personal-site && pnpm deploy` (runs `vite build` then `gh-pages -d dist`)
 
 ## How the UI Library Works
 

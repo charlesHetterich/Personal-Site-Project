@@ -5,7 +5,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "clean": "turbo run clean",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "deploy": "pnpm run --filter @chetterich/personal-site deploy"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
