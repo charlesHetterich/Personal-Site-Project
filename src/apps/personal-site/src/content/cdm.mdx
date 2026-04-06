@@ -9,7 +9,7 @@ import webMock2 from "../assets/cdm_website_mock2.png"
   title="Contract Dependency Manager"
   links={[
     { text: "Repository", href: "https://github.com/paritytech/contract-dependency-manager" },
-    { text: "ContractHub", href: "https://contracthub.paseo.li" },
+    { text: "Contract Hub", href: "https://contracts.paseo.li" },
   ]}
   color="#ff6463"
 />
@@ -237,13 +237,13 @@ While this approach is not memory efficient (deploying a new contract for every 
 
 In the graph you can see, for example, that all contracts were deployed when `v1` of `@polkadot/context` was latest, and stay depending on `v1` after `v2` was deployed. Meanwhile, `v1` & `v2` of `@polkadot/insurance` were deployed when `v2` of `@polkadot/disputes` was latest. After `v3` of `@polkadot/disputes` was deployed, `v3` of `@polkadot/insurance` was deployed depending on it.
 
-## ContractHub
+## Contract Hub
 
 <Image src={webMock1} />
 
 <Image src={webMock2} />
 
-The on-chain registry enables a huge benefit: ***discoverability***. [ContractHub](https://contracthub.paseo.li) is a frontend where all data is real contract data published to the registry on Asset Hub & Bulletin. If you publish any contracts to the registry, you'll see them (and all their metadata) appear.
+The on-chain registry enables a huge benefit: ***discoverability***. [Contract Hub](https://contracts.paseo.li) is a frontend where all data is real contract data published to the registry on Asset Hub & Bulletin. If you publish any contracts to the registry, you'll see them (and all their metadata) appear.
 
 The registry can be seeded with contracts ready for developers to experiment on top of. It's a vehicle for developers to easily share their own contracts with others to develop on top of-- curating a highly collaborative and interconnected environment.
 
