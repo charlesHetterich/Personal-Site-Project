@@ -37,4 +37,4 @@ jobs:
         working-directory: src/apps/personal-site
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          npx gh-pages -d dist --user "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+          npx gh-pages -d dist --user "charlesHetterich <hetterich.charles@gmail.com>"
