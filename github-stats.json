@@ -1,46 +1,11 @@
 {
-  "totalCommits": 1625,
-  "totalContributions": 1753,
-  "totalPRs": 18,
-  "totalIssues": 60,
+  "totalCommits": 1646,
+  "totalContributions": 1773,
+  "totalPRs": 19,
+  "totalIssues": 59,
   "totalRepos": 96,
   "followers": 11,
   "calendar": [
-    {
-      "date": "2025-04-06",
-      "contributionCount": 0,
-      "weekday": 0
-    },
-    {
-      "date": "2025-04-07",
-      "contributionCount": 0,
-      "weekday": 1
-    },
-    {
-      "date": "2025-04-08",
-      "contributionCount": 6,
-      "weekday": 2
-    },
-    {
-      "date": "2025-04-09",
-      "contributionCount": 5,
-      "weekday": 3
-    },
-    {
-      "date": "2025-04-10",
-      "contributionCount": 1,
-      "weekday": 4
-    },
-    {
-      "date": "2025-04-11",
-      "contributionCount": 0,
-      "weekday": 5
-    },
-    {
-      "date": "2025-04-12",
-      "contributionCount": 0,
-      "weekday": 6
-    },
     {
       "date": "2025-04-13",
       "contributionCount": 1,
@@ -1823,7 +1788,7 @@
     },
     {
       "date": "2026-04-04",
-      "contributionCount": 2,
+      "contributionCount": 7,
       "weekday": 6
     },
     {
@@ -1833,9 +1798,44 @@
     },
     {
       "date": "2026-04-06",
-      "contributionCount": 5,
+      "contributionCount": 10,
+      "weekday": 1
+    },
+    {
+      "date": "2026-04-07",
+      "contributionCount": 14,
+      "weekday": 2
+    },
+    {
+      "date": "2026-04-08",
+      "contributionCount": 0,
+      "weekday": 3
+    },
+    {
+      "date": "2026-04-09",
+      "contributionCount": 6,
+      "weekday": 4
+    },
+    {
+      "date": "2026-04-10",
+      "contributionCount": 0,
+      "weekday": 5
+    },
+    {
+      "date": "2026-04-11",
+      "contributionCount": 0,
+      "weekday": 6
+    },
+    {
+      "date": "2026-04-12",
+      "contributionCount": 1,
+      "weekday": 0
+    },
+    {
+      "date": "2026-04-13",
+      "contributionCount": 1,
       "weekday": 1
     }
   ],
-  "updatedAt": "2026-04-06T23:05:37Z"
+  "updatedAt": "2026-04-13T06:36:32Z"
 }
