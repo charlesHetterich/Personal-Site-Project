@@ -1,46 +1,11 @@
 {
-  "totalCommits": 1916,
-  "totalContributions": 2137,
-  "totalPRs": 90,
-  "totalIssues": 58,
+  "totalCommits": 1944,
+  "totalContributions": 2166,
+  "totalPRs": 94,
+  "totalIssues": 55,
   "totalRepos": 106,
   "followers": 12,
   "calendar": [
-    {
-      "date": "2025-05-25",
-      "contributionCount": 2,
-      "weekday": 0
-    },
-    {
-      "date": "2025-05-26",
-      "contributionCount": 7,
-      "weekday": 1
-    },
-    {
-      "date": "2025-05-27",
-      "contributionCount": 1,
-      "weekday": 2
-    },
-    {
-      "date": "2025-05-28",
-      "contributionCount": 10,
-      "weekday": 3
-    },
-    {
-      "date": "2025-05-29",
-      "contributionCount": 1,
-      "weekday": 4
-    },
-    {
-      "date": "2025-05-30",
-      "contributionCount": 0,
-      "weekday": 5
-    },
-    {
-      "date": "2025-05-31",
-      "contributionCount": 0,
-      "weekday": 6
-    },
     {
       "date": "2025-06-01",
       "contributionCount": 1,
@@ -1813,12 +1778,12 @@
     },
     {
       "date": "2026-05-21",
-      "contributionCount": 25,
+      "contributionCount": 26,
       "weekday": 4
     },
     {
       "date": "2026-05-22",
-      "contributionCount": 4,
+      "contributionCount": 3,
       "weekday": 5
     },
     {
@@ -1828,14 +1793,49 @@
     },
     {
       "date": "2026-05-24",
-      "contributionCount": 2,
+      "contributionCount": 4,
       "weekday": 0
     },
     {
       "date": "2026-05-25",
+      "contributionCount": 4,
+      "weekday": 1
+    },
+    {
+      "date": "2026-05-26",
+      "contributionCount": 6,
+      "weekday": 2
+    },
+    {
+      "date": "2026-05-27",
+      "contributionCount": 23,
+      "weekday": 3
+    },
+    {
+      "date": "2026-05-28",
+      "contributionCount": 5,
+      "weekday": 4
+    },
+    {
+      "date": "2026-05-29",
+      "contributionCount": 4,
+      "weekday": 5
+    },
+    {
+      "date": "2026-05-30",
+      "contributionCount": 5,
+      "weekday": 6
+    },
+    {
+      "date": "2026-05-31",
+      "contributionCount": 1,
+      "weekday": 0
+    },
+    {
+      "date": "2026-06-01",
       "contributionCount": 0,
       "weekday": 1
     }
   ],
-  "updatedAt": "2026-05-25T07:22:29Z"
+  "updatedAt": "2026-06-01T07:33:22Z"
 }
