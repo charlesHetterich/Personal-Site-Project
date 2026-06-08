@@ -1,46 +1,11 @@
 {
-  "totalCommits": 1944,
-  "totalContributions": 2166,
-  "totalPRs": 94,
-  "totalIssues": 55,
+  "totalCommits": 2004,
+  "totalContributions": 2254,
+  "totalPRs": 110,
+  "totalIssues": 58,
   "totalRepos": 106,
   "followers": 12,
   "calendar": [
-    {
-      "date": "2025-06-01",
-      "contributionCount": 1,
-      "weekday": 0
-    },
-    {
-      "date": "2025-06-02",
-      "contributionCount": 0,
-      "weekday": 1
-    },
-    {
-      "date": "2025-06-03",
-      "contributionCount": 2,
-      "weekday": 2
-    },
-    {
-      "date": "2025-06-04",
-      "contributionCount": 5,
-      "weekday": 3
-    },
-    {
-      "date": "2025-06-05",
-      "contributionCount": 1,
-      "weekday": 4
-    },
-    {
-      "date": "2025-06-06",
-      "contributionCount": 2,
-      "weekday": 5
-    },
-    {
-      "date": "2025-06-07",
-      "contributionCount": 2,
-      "weekday": 6
-    },
     {
       "date": "2025-06-08",
       "contributionCount": 0,
@@ -1358,7 +1323,7 @@
     },
     {
       "date": "2026-02-26",
-      "contributionCount": 19,
+      "contributionCount": 18,
       "weekday": 4
     },
     {
@@ -1833,9 +1798,44 @@
     },
     {
       "date": "2026-06-01",
+      "contributionCount": 7,
+      "weekday": 1
+    },
+    {
+      "date": "2026-06-02",
+      "contributionCount": 17,
+      "weekday": 2
+    },
+    {
+      "date": "2026-06-03",
+      "contributionCount": 17,
+      "weekday": 3
+    },
+    {
+      "date": "2026-06-04",
+      "contributionCount": 36,
+      "weekday": 4
+    },
+    {
+      "date": "2026-06-05",
+      "contributionCount": 15,
+      "weekday": 5
+    },
+    {
+      "date": "2026-06-06",
       "contributionCount": 0,
+      "weekday": 6
+    },
+    {
+      "date": "2026-06-07",
+      "contributionCount": 6,
+      "weekday": 0
+    },
+    {
+      "date": "2026-06-08",
+      "contributionCount": 4,
       "weekday": 1
     }
   ],
-  "updatedAt": "2026-06-01T07:33:22Z"
+  "updatedAt": "2026-06-08T07:29:19Z"
 }
