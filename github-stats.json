@@ -1,46 +1,11 @@
 {
-  "totalCommits": 2115,
-  "totalContributions": 2368,
-  "totalPRs": 114,
-  "totalIssues": 57,
+  "totalCommits": 2104,
+  "totalContributions": 2353,
+  "totalPRs": 113,
+  "totalIssues": 54,
   "totalRepos": 109,
   "followers": 12,
   "calendar": [
-    {
-      "date": "2025-06-22",
-      "contributionCount": 8,
-      "weekday": 0
-    },
-    {
-      "date": "2025-06-23",
-      "contributionCount": 7,
-      "weekday": 1
-    },
-    {
-      "date": "2025-06-24",
-      "contributionCount": 0,
-      "weekday": 2
-    },
-    {
-      "date": "2025-06-25",
-      "contributionCount": 0,
-      "weekday": 3
-    },
-    {
-      "date": "2025-06-26",
-      "contributionCount": 0,
-      "weekday": 4
-    },
-    {
-      "date": "2025-06-27",
-      "contributionCount": 0,
-      "weekday": 5
-    },
-    {
-      "date": "2025-06-28",
-      "contributionCount": 1,
-      "weekday": 6
-    },
     {
       "date": "2025-06-29",
       "contributionCount": 0,
@@ -1833,9 +1798,44 @@
     },
     {
       "date": "2026-06-22",
+      "contributionCount": 1,
+      "weekday": 1
+    },
+    {
+      "date": "2026-06-23",
+      "contributionCount": 0,
+      "weekday": 2
+    },
+    {
+      "date": "2026-06-24",
+      "contributionCount": 0,
+      "weekday": 3
+    },
+    {
+      "date": "2026-06-25",
+      "contributionCount": 0,
+      "weekday": 4
+    },
+    {
+      "date": "2026-06-26",
+      "contributionCount": 0,
+      "weekday": 5
+    },
+    {
+      "date": "2026-06-27",
+      "contributionCount": 0,
+      "weekday": 6
+    },
+    {
+      "date": "2026-06-28",
+      "contributionCount": 0,
+      "weekday": 0
+    },
+    {
+      "date": "2026-06-29",
       "contributionCount": 0,
       "weekday": 1
     }
   ],
-  "updatedAt": "2026-06-22T07:45:38Z"
+  "updatedAt": "2026-06-29T07:29:04Z"
 }
