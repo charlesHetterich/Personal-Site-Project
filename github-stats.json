@@ -1,46 +1,11 @@
 {
-  "totalCommits": 2675,
-  "totalContributions": 2919,
-  "totalPRs": 128,
-  "totalIssues": 42,
+  "totalCommits": 2658,
+  "totalContributions": 2903,
+  "totalPRs": 129,
+  "totalIssues": 41,
   "totalRepos": 110,
   "followers": 12,
   "calendar": [
-    {
-      "date": "2025-08-31",
-      "contributionCount": 0,
-      "weekday": 0
-    },
-    {
-      "date": "2025-09-01",
-      "contributionCount": 0,
-      "weekday": 1
-    },
-    {
-      "date": "2025-09-02",
-      "contributionCount": 1,
-      "weekday": 2
-    },
-    {
-      "date": "2025-09-03",
-      "contributionCount": 10,
-      "weekday": 3
-    },
-    {
-      "date": "2025-09-04",
-      "contributionCount": 3,
-      "weekday": 4
-    },
-    {
-      "date": "2025-09-05",
-      "contributionCount": 7,
-      "weekday": 5
-    },
-    {
-      "date": "2025-09-06",
-      "contributionCount": 0,
-      "weekday": 6
-    },
     {
       "date": "2025-09-07",
       "contributionCount": 4,
@@ -1833,9 +1798,44 @@
     },
     {
       "date": "2026-08-31",
+      "contributionCount": 1,
+      "weekday": 1
+    },
+    {
+      "date": "2026-09-01",
+      "contributionCount": 1,
+      "weekday": 2
+    },
+    {
+      "date": "2026-09-02",
+      "contributionCount": 2,
+      "weekday": 3
+    },
+    {
+      "date": "2026-09-03",
+      "contributionCount": 1,
+      "weekday": 4
+    },
+    {
+      "date": "2026-09-04",
+      "contributionCount": 0,
+      "weekday": 5
+    },
+    {
+      "date": "2026-09-05",
+      "contributionCount": 0,
+      "weekday": 6
+    },
+    {
+      "date": "2026-09-06",
+      "contributionCount": 0,
+      "weekday": 0
+    },
+    {
+      "date": "2026-09-07",
       "contributionCount": 0,
       "weekday": 1
     }
   ],
-  "updatedAt": "2026-08-31T11:54:20Z"
+  "updatedAt": "2026-09-07T10:47:01Z"
 }
